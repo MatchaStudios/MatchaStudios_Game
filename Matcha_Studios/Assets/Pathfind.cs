@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Pathfind : MonoBehaviour
 {
-    public float moveSpeed = 10.0f;
+    [Range(0, 1)]
+    public float moveSpeed = 0.1f;
     public float stoppingDistance = 2.0f;
     public Transform player;
     // Add any other variables you might need here.
@@ -17,30 +18,25 @@ public class Pathfind : MonoBehaviour
 
     void Update()
     {
-        // Add logic for following the player and stopping within vicinity.
-        // You'll use Vector3.MoveTowards or a similar function.
-        // Add logic for avoiding other AIs.
-
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance > stoppingDistance)
         {
             transform.LookAt(player);
-            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            SmoothMoveTowards(player.position, moveSpeed);
         }
-    }
-    void AvoidCollision()
-    {
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 5.0f))
-        {
-            if (hit.collider.CompareTag("AI"))
-            {
-                // Adjust path to avoid collision with other AI.
-                // AI pathfinding.
 
-            }
-        }
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * distance;
+        Debug.DrawRay(transform.position, forward, Color.green);
+    }
+
+    void SmoothMoveTowards(Vector3 targetPosition, float speed)
+    {
+        // Calculate the step size based on speed and frame rate.
+        float step = speed * Time.deltaTime;
+
+        // Move towards the target using Vector3.Lerp.
+        transform.position = Vector3.Lerp(transform.position, targetPosition, step);
     }
 
 }
