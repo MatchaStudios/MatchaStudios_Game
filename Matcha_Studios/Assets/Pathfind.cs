@@ -7,12 +7,11 @@ public class Pathfind : MonoBehaviour
     [Range(0, 1)]
     public float moveSpeed = 0.1f;
     public float stoppingDistance = 2.0f;
-    public Transform player;
-    // Add any other variables you might need here.
+    private Transform player;
 
     void Start()
     {
-        // Find the player using a tag or some other method.
+        // Find the player using a tag.
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -20,13 +19,15 @@ public class Pathfind : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.position);
 
+        transform.LookAt(player);
         if (distance > stoppingDistance)
         {
-            transform.LookAt(player);
             SmoothMoveTowards(player.position, moveSpeed);
         }
 
         Vector3 forward = transform.TransformDirection(Vector3.forward) * distance;
+
+        //Draws ray for visual debug purposes.
         Debug.DrawRay(transform.position, forward, Color.green);
     }
 

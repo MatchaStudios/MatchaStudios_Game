@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AI
   - Environment
+  - SimpleBullet
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class AISeparation : MonoBehaviour
     {
         foreach (GameObject go in AI)
         {
+            //if go is not this game object.
             if (go != gameObject)
             {
                 float distance = Vector3.Distance(go.transform.position, this.transform.position);
