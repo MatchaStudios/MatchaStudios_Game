@@ -113,7 +113,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.304
   stoppingDistance: 10
-  player: {fileID: 0}
 --- !u!114 &6329149781639341624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb2d69c98d7784191d826ea9c83290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpaceBetween: 3
+  SpaceBetween: 10
 --- !u!114 &5023469195088864610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +139,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathfind: {fileID: 7304042638919330410}
-  player: {fileID: 0}
   orbitSpeed: 50
 --- !u!114 &8915094465428897651
 MonoBehaviour:
@@ -154,6 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bf184158975a44aa56dfa13d727319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simpleBullet: {fileID: 0}
   bulletType: {fileID: 5514170091429913893, guid: 08d2e3a657359db4dab35d9c675e4c98, type: 3}
   spawnRate: 1

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AISeparation : MonoBehaviour
 {
-    GameObject[] AI;
+    public GameObject[] AI;
+    public GameObject[] Environment;
     public float SpaceBetween = 2f;
 
     void Start()
     {
         AI = GameObject.FindGameObjectsWithTag("AI");
+        Environment = GameObject.FindGameObjectsWithTag("Environment");
     }
 
     void Update()
@@ -22,10 +24,23 @@ public class AISeparation : MonoBehaviour
                 float distance = Vector3.Distance(go.transform.position, this.transform.position);
                 if (distance <= SpaceBetween)
                 {
-                    Vector3 direction = transform.position - go.transform.position;
-                    transform.Translate(direction * Time.deltaTime);
+                    m_Translation(go);
+                }
+            }
+            foreach (GameObject envObject in Environment)
+            {
+                float distance = Vector3.Distance(go.transform.position, envObject.transform.position);
+                if (distance <= SpaceBetween)
+                {
+                    m_Translation(go);
                 }
             }
         }
+    }
+
+    void m_Translation(GameObject go)
+    {
+        Vector3 direction = transform.position - go.transform.position;
+        transform.Translate(direction * Time.deltaTime);
     }
 }

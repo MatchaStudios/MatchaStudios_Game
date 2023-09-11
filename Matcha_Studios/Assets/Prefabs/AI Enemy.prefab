@@ -112,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.304
   stoppingDistance: 5
-  player: {fileID: 0}
 --- !u!114 &7898077755033976256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb2d69c98d7784191d826ea9c83290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpaceBetween: 3
+  SpaceBetween: 5
 --- !u!114 &5838684787630860425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +138,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType: {fileID: 5875302729293077870, guid: 17f79bcc1912ed444b25366c37657ad9, type: 3}
+  spawnRate: 1
