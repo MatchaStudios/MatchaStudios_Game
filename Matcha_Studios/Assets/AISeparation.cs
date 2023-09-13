@@ -43,4 +43,6 @@ public class AISeparation : MonoBehaviour
         Vector3 direction = transform.position - go.transform.position;
         transform.Translate(direction * Time.deltaTime);
     }
+
+
 }
