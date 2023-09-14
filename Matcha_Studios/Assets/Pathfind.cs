@@ -21,6 +21,8 @@ public class Pathfind : MonoBehaviour
     // rigidbody
     public Rigidbody rigidbody;
 
+    public bool targetting;
+
     // State
     public enum State
     {
@@ -100,11 +102,15 @@ public class Pathfind : MonoBehaviour
 
             Debug.DrawRay(rayOrigin, rayDirection * rayLength, Color.cyan);
 
+            float distance = Vector3.Distance(transform.position, player.position);
+
             RaycastHit hit;
             if (Physics.Raycast(transform.position, rayDirection, out hit, rayLength))
             {
                 if (hit.collider.CompareTag("Environment"))
                 {
+                    targetting = false;
+
                     state = State.AVOID;
                     Vector3 ObstacleNormal = hit.normal;
                     Vector3 direction = (hit.point - transform.position).normalized;
@@ -113,10 +119,12 @@ public class Pathfind : MonoBehaviour
                     Debug.DrawRay(hit.point, 10 * ObstacleNormal, Color.yellow); // Normal to surface
                     Debug.DrawRay(transform.position, 10 * dirToGo.normalized, Color.red); // Direction to change to
                 }
-                else
-                {
-                    state = State.TARGET;
-                }
+            }
+            else if (distance > stoppingDistance)
+            {
+                targetting = true;
+
+                state = State.TARGET;
             }
         }
 
