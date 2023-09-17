@@ -33,15 +33,25 @@ public class SimpleBullet : MonoBehaviour
         //}
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             //delete the bullet.
             Destroy(gameObject);
 
         }
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        //delete the bullet.
+    //        Destroy(gameObject);
+
+    //    }
+    //}
 
     //TODO:
     //Make object pooling.

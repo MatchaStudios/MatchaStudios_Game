@@ -154,7 +154,7 @@ public class Missile : MonoBehaviour
         rb.velocity = directionToPlayer * currentSpeed;
 
         // Check if missile has reached player (you can implement a proximity check here)
-        if (Vector3.Distance(transform.position, player.position) <= 1.0f)
+        if (Vector3.Distance(transform.position, player.position) <= 2.0f)
         {
             Explode();
         }
