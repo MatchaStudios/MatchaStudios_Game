@@ -5,14 +5,14 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject bulletType;
-    private SimpleBullet simpleBullet;
     public float spawnRate = 1.0f; // Spawn once per second
-
+    public float bulletSpeed = 10f; 
     private float nextSpawnTime;
+
+    public bool inheritVelocity = false;
 
     void Start()
     {
-        simpleBullet = bulletType.GetComponent<SimpleBullet>();
         nextSpawnTime = Time.time + spawnRate;
     }
 
@@ -28,7 +28,20 @@ public class Shoot : MonoBehaviour
     void SpawnObject()
     {
         GameObject spawnedObject = Instantiate(bulletType, transform.position, Quaternion.identity);
-        //shoots in the direction that the enemy is facing.
+        // shoots in the direction that the enemy is facing.
         spawnedObject.transform.rotation = transform.rotation;
+
+        // Get rigidbody of the spawned bullet.
+        Rigidbody rb = spawnedObject.GetComponent<Rigidbody>();
+
+        if(inheritVelocity == true)
+        {
+            // inherit velocity from this gameObject.
+            rb.velocity = this.GetComponent<Rigidbody>().velocity;
+        }
+
+        // shoot the bullet in the direction of the target.
+        rb.velocity += bulletSpeed * transform.forward;
+
     }
 }
