@@ -19,18 +19,23 @@ public class AISeparation : MonoBehaviour
 
     void Update()
     {
+        AI = GameObject.FindGameObjectsWithTag("AI");
+        Environment = GameObject.FindGameObjectsWithTag("Environment");
         foreach (GameObject go in AI)
         {
             //if go is not this game object.
             if (go != gameObject)
             {
-                float distance = Vector3.Distance(go.transform.position, this.transform.position);
-
-                if (distance <= SpaceBetween)
+                if(go)
                 {
-                    //m_Translation(go);
-                    Vector3 direction = (go.transform.position - transform.position).normalized;
-                    rb.AddForce(- repelForce * direction, ForceMode.Impulse);
+                    float distance = Vector3.Distance(go.transform.position, this.transform.position);
+
+                    if (distance <= SpaceBetween)
+                    {
+                        //m_Translation(go);
+                        Vector3 direction = (go.transform.position - transform.position).normalized;
+                        rb.AddForce(- repelForce * direction, ForceMode.Impulse);
+                    }
                 }
             }
             //foreach (GameObject envObject in Environment)

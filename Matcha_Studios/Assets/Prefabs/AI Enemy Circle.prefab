@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 7304042638919330407}
   - component: {fileID: 7304042638919330408}
   - component: {fileID: 7304042638919330409}
+  - component: {fileID: 5316161424680191572}
   - component: {fileID: 7304042638919330410}
   - component: {fileID: 6329149781639341624}
   - component: {fileID: 5023469195088864610}
   - component: {fileID: 8915094465428897651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AI Enemy Circle
   m_TagString: AI
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -99,6 +100,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5316161424680191572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304042638919330411}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &7304042638919330410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +129,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.304
-  stoppingDistance: 10
+  avoidSpeedPercentage: 0.5
+  avoidSpeed: 10
+  stoppingDistance: 20
+  player: {fileID: 0}
+  rayCount: 10
+  rayLength: 5
+  spreadAngle: 45
+  rigidbody: {fileID: 0}
+  targetting: 0
+  state: 0
 --- !u!114 &6329149781639341624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cb2d69c98d7784191d826ea9c83290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AI: []
+  Environment: []
   SpaceBetween: 10
+  rb: {fileID: 0}
+  repelForce: 1
 --- !u!114 &5023469195088864610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ef27eb2c5e48f4189727d9edf61469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitSpeed: 10
   pathfind: {fileID: 7304042638919330410}
-  orbitSpeed: 50
 --- !u!114 &8915094465428897651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: {fileID: 5514170091429913893, guid: 08d2e3a657359db4dab35d9c675e4c98, type: 3}
   spawnRate: 1
+  bulletSpeed: 10
+  inheritVelocity: 0
