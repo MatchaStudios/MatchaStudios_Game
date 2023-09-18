@@ -170,4 +170,4 @@ MonoBehaviour:
   bulletType: {fileID: 5875302729293077870, guid: 17f79bcc1912ed444b25366c37657ad9, type: 3}
   spawnRate: 1
   bulletSpeed: 10
-  inheritVelocity: 0
+  inheritVelocity: 1
