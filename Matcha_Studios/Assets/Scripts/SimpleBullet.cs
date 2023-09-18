@@ -20,17 +20,6 @@ public class SimpleBullet : MonoBehaviour
         //transform.up is the Y axis.
         //then move the the bullet towards the target in Y direction each update.
         //transform.position += transform.up * speed * Time.deltaTime;
-
-        //when touch an object, it disappears.
-        //RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.up, out hit, 0.1f))
-        //{
-        //    if (hit.collider.CompareTag("Player") || hit.collider.CompareTag("AI") || hit.collider.CompareTag("Environment"))
-        //    {
-        //        //delete the bullet.
-        //        Destroy(gameObject);
-        //    }
-        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,16 +31,6 @@ public class SimpleBullet : MonoBehaviour
 
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        //delete the bullet.
-    //        Destroy(gameObject);
-
-    //    }
-    //}
 
     //TODO:
     //Make object pooling.

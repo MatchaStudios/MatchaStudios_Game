@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public GameObject bulletType;
-    public float spawnRate = 1.0f; // Spawn once per second
-    public float bulletSpeed = 10f; 
-    private float nextSpawnTime;
+    public GameObject   bulletType;
+    public float        spawnRate = 1.0f; // Spawn once per second
+    public float        bulletSpeed = 10f; 
+    public bool         inheritVelocity = false;
 
-    public bool inheritVelocity = false;
+    private float       nextSpawnTime;
+
 
     void Start()
     {
@@ -41,6 +42,9 @@ public class Shoot : MonoBehaviour
         }
 
         // shoot the bullet in the direction of the target.
+        // get the bullet's velocity to aim towards the player by using the AI's transform.
+        // pushing the bullet out from the AI'S transform.forward instead of using the
+        // bullet's transform.up.
         rb.velocity += bulletSpeed * transform.forward;
 
     }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6850854620000661906}
   - component: {fileID: 7898077755033976256}
   - component: {fileID: 5838684787630860425}
+  - component: {fileID: 5719037073229622672}
   m_Layer: 6
   m_Name: AI Enemy
   m_TagString: AI
@@ -171,3 +172,15 @@ MonoBehaviour:
   spawnRate: 1
   bulletSpeed: 10
   inheritVelocity: 0
+--- !u!114 &5719037073229622672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850854620000661907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2bbf5a7bdaf2642aa90a7a7820aa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
