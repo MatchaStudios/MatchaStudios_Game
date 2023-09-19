@@ -22,8 +22,7 @@ public class SpaceshipShooting : MonoBehaviour
     [Header("=== Laser Settings ===")]
     [SerializeField]
     private LineRenderer[] lasers;
-    [SerializeField]
-    private ParticleSystem laserHitParticles;
+
     [SerializeField]
     private float miningPower = 1f;
     [SerializeField]
@@ -32,6 +31,11 @@ public class SpaceshipShooting : MonoBehaviour
     private float laserHeatRate = 0.25f;
     [SerializeField]
     private float laserCoolRate = 0.5f;
+    [SerializeField]
+    private float timeBetweenDamageApplication = 0.0f;
+    private float currentTimeBetweenDamageApplication;
+    [SerializeField]
+    private float laserDamage = 1f;
 
     private float currentLaserHeat = 0f;
     private bool overHeated = false;
@@ -58,7 +62,7 @@ public class SpaceshipShooting : MonoBehaviour
 
     private void Update()
     {
-            HandleLaserFiring();
+        HandleLaserFiring();
 
     }
 
@@ -70,7 +74,7 @@ public class SpaceshipShooting : MonoBehaviour
         }
         else
         {
-            foreach(var laser in lasers)
+            foreach (var laser in lasers)
             {
                 laser.gameObject.SetActive(false);
             }
@@ -78,14 +82,30 @@ public class SpaceshipShooting : MonoBehaviour
             CoolLaser();
         }
     }
+    void ApplyDamage(HealthComponent healthComponent)
+    {
+        currentTimeBetweenDamageApplication += Time.deltaTime;
 
+        //if (currentTimeBetweenDamageApplication > timeBetweenDamageApplication)
+        //{
+            currentTimeBetweenDamageApplication = 0f;
+            healthComponent.TakeDamage(laserDamage);
+            Debug.Log("doing damage");
+       // }
+    }
     void FireLaser()
     {
         RaycastHit hitInfo;
 
-        if(TargetInfo.IsTargetInRange(hardpointMiddle.transform.position, cam.transform.forward, out hitInfo, hardpointRange, shootableMask))
+        if (TargetInfo.IsTargetInRange(hardpointMiddle.transform.position, cam.transform.forward, out hitInfo, hardpointRange, shootableMask))
         {
-           // Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Debug.Log("In range");
+            if (hitInfo.collider.GetComponentInParent<HealthComponent>()) 
+            {
+                Debug.Log("can damage");
+                ApplyDamage(hitInfo.collider.GetComponentInParent<HealthComponent>());
+            }
+            //Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
             foreach (var laser in lasers)
             {
@@ -96,7 +116,7 @@ public class SpaceshipShooting : MonoBehaviour
         }
         else
         {
-            foreach(var laser in lasers)
+            foreach (var laser in lasers)
             {
                 laser.gameObject.SetActive(true);
                 laser.SetPosition(1, new Vector3(0, 0, hardpointRange));
@@ -118,7 +138,7 @@ public class SpaceshipShooting : MonoBehaviour
                 firing = false;
             }
         }
-        
+
     }
 
     void CoolLaser()
