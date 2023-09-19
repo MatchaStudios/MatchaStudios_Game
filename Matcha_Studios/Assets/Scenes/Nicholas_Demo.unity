@@ -1292,7 +1292,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f6ef4211e0b148246998ae68dff40183, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6ef4211e0b148246998ae68dff40183, type: 3}
       propertyPath: m_LocalScale.x
@@ -2574,6 +2574,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f922580a-6a03-493e-bb7b-f4d5770e7bc5
     m_ActionName: Ship Controls/Fire[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1136638556}
+        m_TargetAssemblyTypeName: Cannon, Assembly-CSharp
+        m_MethodName: OnFireCannon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f8d783bd-f39d-4367-9537-3032ac455e60
+    m_ActionName: Ship Controls/FireCannon[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Ship Controls
@@ -2678,10 +2694,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604062ed2a8094543994e2386d569227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannonFireRate: 0
-  cannonSpread: 0
+  cannonFireRate: 500
+  cannonSpread: 0.4
   cannonSpawnPoint: {fileID: 1560375459}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 2669934981140404945, guid: a6a331fa124eaf148bd5a44b8f133e51, type: 3}
 --- !u!1001 &1267742069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3178,7 +3194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560375458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.765, z: 1.428}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2113494239}
@@ -4264,11 +4280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e190c4efdf265744386ee5695aa2b6e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -0.7929987
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e190c4efdf265744386ee5695aa2b6e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.37199402
+      value: -1.056006
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e190c4efdf265744386ee5695aa2b6e7, type: 3}
       propertyPath: m_LocalRotation.w

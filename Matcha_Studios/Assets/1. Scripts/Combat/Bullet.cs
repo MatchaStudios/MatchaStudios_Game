@@ -43,7 +43,7 @@ public class Bullet : MonoBehaviour
         if (Physics.SphereCast(ray, width, out hit, diff.magnitude, collisionMask.value))
         {
             //Plane other = hit.collider.GetComponent<Plane>();
-
+            //DO DAMAGE FIND LIKE ABOVE
         }
     }
 }

@@ -11,8 +11,7 @@
                     "id": "92ad1562-c0ea-40c0-bb30-3b0699917b99",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Strafe",
@@ -20,8 +19,7 @@
                     "id": "61c3fcb8-5fe9-4b53-b690-e71459aeb8f1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "UpDown",
@@ -29,8 +27,7 @@
                     "id": "fa19d3da-9ede-4b44-87a9-65263ad5be69",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Roll",
@@ -38,8 +35,7 @@
                     "id": "3b53c957-b848-418c-9e4a-f13f0c688b5c",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "PitchYaw",
@@ -47,8 +43,7 @@
                     "id": "63887e70-992b-443a-a78f-fc83f757fdbe",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Boost",
@@ -56,8 +51,7 @@
                     "id": "0e9c3448-49b8-4247-8afd-0efd294c92fd",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
+                    "interactions": "Press"
                 },
                 {
                     "name": "Fire",
@@ -65,8 +59,15 @@
                     "id": "f922580a-6a03-493e-bb7b-f4d5770e7bc5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
+                    "interactions": "Press"
+                },
+                {
+                    "name": "FireCannon",
+                    "type": "Button",
+                    "id": "f8d783bd-f39d-4367-9537-3032ac455e60",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -386,6 +387,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f5363f87-926a-49bc-b642-2a8904067725",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireCannon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

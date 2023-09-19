@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Cannon : MonoBehaviour
 {
@@ -78,5 +79,17 @@ public class Cannon : MonoBehaviour
 
         //update weapon state
         UpdateWeapons(dt);
+    }
+
+    public void OnFireCannon(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            this.SetCannonInput(true);
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            this.SetCannonInput(false);
+        }
     }
 }
