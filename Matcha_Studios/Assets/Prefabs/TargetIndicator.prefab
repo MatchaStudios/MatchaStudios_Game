@@ -67,9 +67,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: faece8e3ca7e6564e9a6dc7d37d5959c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16ad54163856f417e96871f3ad75a775, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -89,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4fe55fa2639424eb1b64189233f8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   TargetIndicatorImage: {fileID: 4086782065176607744}
   OffScreenTargetIndicator: {fileID: 8418570738906738920}
   OutOfSightOffset: 20
@@ -157,9 +158,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3a29b9cbbae12034c973de7b680d46a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 20da3e0a56df642e1abc25c9e66d9aa8, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
