@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TargetIndicator : MonoBehaviour
 {
+    public int id = 0;
     public Image TargetIndicatorImage;
     public Image OffScreenTargetIndicator;
     public float OutOfSightOffset = 20f;
@@ -21,12 +22,16 @@ public class TargetIndicator : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
+    private void Start() {
+        Debug.Log("Target " + id +" Initalized");
+    }
 
-    public void InitialiseTargetIndicator(GameObject target, Camera mainCamera, Canvas canvas)
+    public void InitialiseTargetIndicator(GameObject target, Camera mainCamera, Canvas canvas, int id)
     {
         this.target = target;
         this.mainCamera = mainCamera;
         canvasRect = canvas.GetComponent<RectTransform>();
+        this.id = id;   
     }
 
     public void UpdateTargetIndicator()
@@ -158,5 +163,9 @@ public class TargetIndicator : MonoBehaviour
 
         //return the angle as a rotation Vector
         return new Vector3(0f, 0f, angle);
+    }
+
+    public void DeleteSelf () {
+        Destroy(this);
     }
 }
