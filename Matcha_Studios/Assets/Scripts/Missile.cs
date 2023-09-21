@@ -135,10 +135,10 @@ public class Missile : MonoBehaviour
         // rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, setWaitTimer);
 
         // Check if missile has reached player (you can implement a proximity check here)
-        if (Vector3.Distance(transform.position, player.position) <= 1.0f)
-        {
-            Explode();
-        }
+        //if (Vector3.Distance(transform.position, player.position) <= 3.0f)
+        //{
+        //    Explode();
+        //}
     }
 
     void Accelerate()
@@ -153,11 +153,11 @@ public class Missile : MonoBehaviour
 
         rb.velocity = directionToPlayer * currentSpeed;
 
-        // Check if missile has reached player (you can implement a proximity check here)
-        if (Vector3.Distance(transform.position, player.position) <= 2.0f)
-        {
-            Explode();
-        }
+        //// Check if missile has reached player (you can implement a proximity check here)
+        //if (Vector3.Distance(transform.position, player.position) <= 3.0f)
+        //{
+        //    Explode();
+        //}
     }
 
     void Explode()

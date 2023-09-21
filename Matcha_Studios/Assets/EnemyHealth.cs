@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public int curHealth;
     public int maxHealth;
 
+    public ParticleSystem ExplosionParticle;
+
     void Start()
     {
         initHealth  = maxHealth;
@@ -26,5 +28,14 @@ public class EnemyHealth : MonoBehaviour
         {
             
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Instantiate(ExplosionParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }        
     }
 }

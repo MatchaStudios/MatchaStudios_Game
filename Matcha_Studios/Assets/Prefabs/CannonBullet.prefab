@@ -50,7 +50,7 @@ MonoBehaviour:
   speed: 200
   collisionMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   width: 2.5
 --- !u!120 &2669934981140404944
 LineRenderer:
