@@ -131,6 +131,7 @@ namespace UnityTemplateProjects
             direction.z = moveDelta.y;
             direction.y = verticalMovementAction.ReadValue<Vector2>().y;
 #else
+/*
             if (Input.GetKey(KeyCode.W))
             {
                 direction += Vector3.forward;
@@ -155,6 +156,7 @@ namespace UnityTemplateProjects
             {
                 direction += Vector3.up;
             }
+            */
 #endif
             return direction;
         }
@@ -174,14 +176,14 @@ namespace UnityTemplateProjects
             // Hide and lock cursor when right mouse button pressed
             if (IsRightMouseButtonDown())
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.lockState = CursorLockMode.Locked;
             }
 
             // Unlock and show cursor when right mouse button released
             if (IsRightMouseButtonUp())
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                //Cursor.visible = true;
+                //Cursor.lockState = CursorLockMode.None;
             }
 
             // Rotation
@@ -246,7 +248,7 @@ namespace UnityTemplateProjects
             boost |= Gamepad.current != null ? Gamepad.current.xButton.isPressed : false;
             return boost;
 #else
-            return Input.GetKey(KeyCode.LeftShift);
+            //return Input.GetKey(KeyCode.LeftShift);
 #endif
 
         }
@@ -256,7 +258,7 @@ namespace UnityTemplateProjects
 #if ENABLE_INPUT_SYSTEM
             return Keyboard.current != null ? Keyboard.current.escapeKey.isPressed : false; 
 #else
-            return Input.GetKey(KeyCode.Escape);
+            //return Input.GetKey(KeyCode.Escape);
 #endif
         }
 

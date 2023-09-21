@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Demo.unity
+    guid: 4b3cb9fb5e3ecde409b6d93af8df86ea
+  - enabled: 1
+    path: Assets/Scenes/Nicholas_Demo.unity
+    guid: 08eab956d9a9ae5478f79a7d1655a8bf
   m_configObjects: {}
