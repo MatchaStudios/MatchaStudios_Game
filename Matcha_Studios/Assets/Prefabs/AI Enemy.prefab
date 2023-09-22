@@ -173,6 +173,7 @@ MonoBehaviour:
   spawnRate: 1
   bulletSpeed: 10
   inheritVelocity: 0
+  weaponDamage: 1
 --- !u!114 &5719037073229622672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,4 +202,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9ce5e59931e24408b5ee2918ba2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  isAlive: 1
+  initHealth: 50
+  curHealth: 50
+  maxHealth: 50

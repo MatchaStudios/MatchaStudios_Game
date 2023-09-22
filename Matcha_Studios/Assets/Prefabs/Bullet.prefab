@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3507972762906920173}
   - component: {fileID: 1270490120824929605}
   - component: {fileID: 4305455017008442611}
-  - component: {fileID: 7996150588324889293}
-  m_Layer: 6
+  - component: {fileID: 6530295966222263372}
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: SimpleBullet
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7996150588324889293
+--- !u!114 &6530295966222263372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

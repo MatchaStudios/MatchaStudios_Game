@@ -5,6 +5,9 @@ using UnityEngine;
 public class SimpleBullet : MonoBehaviour
 {
     public float speed = 5.0f;
+    public string team = "No Team";
+    public float damage = 0f;
+    public GameObject objectSpawnedFrom;
     Collider coll;
 
     private void Start()
@@ -13,6 +16,7 @@ public class SimpleBullet : MonoBehaviour
         //rotate the X axis 90 degrees to make it look like bullet.
         transform.Rotate(Vector3.right, 90.0f);
         coll = GetComponent<Collider>();
+        //ownerName = gameObject.tag;
     }
 
     private void Update()
@@ -24,11 +28,27 @@ public class SimpleBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if(other.gameObject == objectSpawnedFrom)
         {
-            //delete the bullet.
-            Destroy(gameObject);
-
+            // Don't delete if it belongs to owner. 
+        }
+        else
+        {
+            // This might mean enemies bullets will phase through enemies. 
+            if (other.gameObject.tag == "AI")
+            {
+                Destroy(gameObject);
+            }
+            if (other.gameObject.tag == "Player")
+            {
+                //delete the bullet.
+                Destroy(gameObject);
+            }
+            if (other.gameObject.tag == "Environment")
+            {
+                //delete the bullet.
+                Destroy(gameObject);
+            }
         }
     }
 

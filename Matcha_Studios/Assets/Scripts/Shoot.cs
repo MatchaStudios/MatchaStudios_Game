@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public float        spawnRate = 1.0f; // Spawn once per second
     public float        bulletSpeed = 10f; 
     public bool         inheritVelocity = false;
+    public float        weaponDamage = 0f;
 
     private float       nextSpawnTime;
 
@@ -28,24 +29,38 @@ public class Shoot : MonoBehaviour
 
     void SpawnObject()
     {
+        // spawns bullet
         GameObject spawnedObject = Instantiate(bulletType, transform.position, Quaternion.identity);
-        // shoots in the direction that the enemy is facing.
-        spawnedObject.transform.rotation = transform.rotation;
 
-        // Get rigidbody of the spawned bullet.
-        Rigidbody rb = spawnedObject.GetComponent<Rigidbody>();
-
-        if(inheritVelocity == true)
+        // Get Simple Bullet Script. Not every bullet has one!
+        if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
         {
-            // inherit velocity from this gameObject.
-            rb.velocity = this.GetComponent<Rigidbody>().velocity;
+            //bullet = spawnedObject.GetComponent<SimpleBullet>();
+            bullet.damage = weaponDamage;
+            bullet.team = gameObject.tag;
+            bullet.objectSpawnedFrom = gameObject;
         }
 
-        // shoot the bullet in the direction of the target.
-        // get the bullet's velocity to aim towards the player by using the AI's transform.
-        // pushing the bullet out from the AI'S transform.forward instead of using the
-        // bullet's transform.up.
-        rb.velocity += bulletSpeed * transform.forward;
+        // Shoots in the direction that the enemy is facing.
+        // Every object should have transform.
+        spawnedObject.transform.rotation = transform.rotation;
 
+        // Get rigidbody of the spawned bullet. Not every bullet has one!
+        if (spawnedObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
+        {
+            //rb = spawnedObject.GetComponent<Rigidbody>();
+
+            if (inheritVelocity == true)
+            {
+                // inherit velocity from this gameObject.
+                rb.velocity = this.GetComponent<Rigidbody>().velocity;
+            }
+
+            // shoot the bullet in the direction of the target.
+            // get the bullet's velocity to aim towards the player by using the AI's transform.
+            // pushing the bullet out from the AI'S transform.forward instead of using the
+            // bullet's transform.up.
+            rb.velocity += bulletSpeed * transform.forward;
+        }
     }
 }

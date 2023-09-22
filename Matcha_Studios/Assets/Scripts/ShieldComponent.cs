@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Shield : MonoBehaviour
+public class ShieldComponent : MonoBehaviour
 {
     public Text shieldText;
     public Image shieldBar;
