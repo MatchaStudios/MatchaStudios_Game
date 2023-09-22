@@ -7,32 +7,29 @@ public class HealthComponent : MonoBehaviour
 {
     public Text healthText;
     public Image healthBar;
-    public Text shieldText;
-    public Image shieldBar;
 
     float lerpSpeed;
 
-    public float health, maxHealth = 100f;
-    public float shield, maxshield = 100f;
+    public float    initHealth,
+                    curHealth,
+                    maxHealth;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        health = maxHealth;
-        shield = maxshield;
+        initHealth = maxHealth;
+        curHealth = maxHealth;
+
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        healthText.text = "Health: " + health + "%";
+        healthText.text = "Health: " + curHealth + "%";
 
-        shieldText.text = "Shield: " + shield + "%";
-
-        if (health > maxHealth) health = maxHealth;
-
-        if (shield > maxshield) shield = maxshield;
-
+        if (curHealth > maxHealth)
+        {
+            curHealth = maxHealth;
+        }
         lerpSpeed = 3f * Time.deltaTime;
 
         barFiller();
@@ -41,26 +38,23 @@ public class HealthComponent : MonoBehaviour
 
     void barFiller()
     {
-        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, health/maxHealth, lerpSpeed);
-        shieldBar.fillAmount = Mathf.Lerp(shieldBar.fillAmount, shield / maxshield, lerpSpeed);
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, curHealth /maxHealth, lerpSpeed);
     }
 
 
     void ColorChanger()
     {
-        Color healthColor = Color.Lerp(Color.red, Color.green, (health/maxHealth));
+        Color healthColor = Color.Lerp(Color.red, Color.green, (curHealth /maxHealth));
         healthBar.color = healthColor;
-        shieldBar.color = healthColor;
     }
 
     //----
 
     public virtual void TakeDamage(float damage)
     {
-        health -= damage;
-        shield -= damage;
+        curHealth -= damage;
 
-        if (health <= 0)
+        if (curHealth <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -75,13 +69,8 @@ public class HealthComponent : MonoBehaviour
      
     public void Heal(float heal)
     {
-        if (health < maxHealth)
-            health += heal;
+        if (curHealth < maxHealth)
+            curHealth += heal;
     }
 
-    public void shieldBoost(float heal)
-    {
-        if (shield < maxshield)
-            shield += heal;
-    }
 }
