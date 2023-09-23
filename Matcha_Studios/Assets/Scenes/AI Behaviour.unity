@@ -1106,7 +1106,7 @@ MonoBehaviour:
   isAlive: 1
   initHealth: 100
   curHealth: 100
-  maxHealth: 100
+  maxHealth: 5
 --- !u!1001 &427941481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5324,7 +5324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7405580569073102449, guid: d1e667b3a2f5eda4dbffb55a65bf77ae, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1e667b3a2f5eda4dbffb55a65bf77ae, type: 3}

@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class HealthComponent : MonoBehaviour
 {
+    [Header("=== Player Only ===")]
     public Text healthText;
     public Image healthBar;
+
+    [Header("=== For All ===")]
     public bool isAlive = true;
 
     float lerpSpeed;
