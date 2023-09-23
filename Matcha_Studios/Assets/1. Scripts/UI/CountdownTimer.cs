@@ -42,4 +42,16 @@ public class CountdownTimer : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
+
+    public void Pause()
+    {
+        //pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        //pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
 }
