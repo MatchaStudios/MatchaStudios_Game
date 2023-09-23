@@ -24,6 +24,11 @@ public class AICircling : MonoBehaviour
 
     void Update()
     {
+        if(player == null)
+        {
+            return;
+        }
+
         float distance = Vector3.Distance(transform.position, player.position);
         transform.LookAt(player);
 

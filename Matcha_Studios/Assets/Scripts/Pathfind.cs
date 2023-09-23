@@ -19,7 +19,7 @@ public class Pathfind : MonoBehaviour
     public float spreadAngle = 45.0f; // Angle of spread in degrees
 
     // rigidbody
-    public Rigidbody rigidbody;
+    public Rigidbody rb;
 
     public bool targetting;
 
@@ -36,11 +36,17 @@ public class Pathfind : MonoBehaviour
     {
         // Find the player using a tag.
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        // check if player still exists
+        if (player == null)
+        {
+            return;
+        }
+
         float distance = Vector3.Distance(transform.position, player.position);
         Vector3 forward = transform.TransformDirection(Vector3.forward) * distance;
 
@@ -60,9 +66,10 @@ public class Pathfind : MonoBehaviour
                 break;
         }
 
-        
+
         //Draws ray for visual debug purposes.
         Debug.DrawRay(transform.position, forward, Color.green);
+
     }
 
     void SmoothMoveTowards(Vector3 targetPosition, float speed)
@@ -115,7 +122,7 @@ public class Pathfind : MonoBehaviour
                     Vector3 ObstacleNormal = hit.normal;
                     Vector3 direction = (hit.point - transform.position).normalized;
                     Vector3 dirToGo = Vector3.Cross(ObstacleNormal, direction);
-                    rigidbody.AddForce(avoidSpeed * dirToGo.normalized, ForceMode.Impulse);
+                    rb.AddForce(avoidSpeed * dirToGo.normalized, ForceMode.Impulse);
                     Debug.DrawRay(hit.point, 10 * ObstacleNormal, Color.yellow); // Normal to surface
                     Debug.DrawRay(transform.position, 10 * dirToGo.normalized, Color.red); // Direction to change to
                 }

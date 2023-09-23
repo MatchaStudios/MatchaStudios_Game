@@ -85,6 +85,11 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
+        if(player == null)
+        {
+            return;
+        }
+
         switch(phase)
         {
             case Phase.EJECT:
