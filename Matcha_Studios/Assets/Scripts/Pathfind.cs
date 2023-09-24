@@ -11,6 +11,7 @@ public class Pathfind : MonoBehaviour
 
     public float avoidSpeed = 10f;
     public float stoppingDistance = 2.0f;
+    public float lookAtSpeed = 1.0f;
     public Transform player;
 
     // Rays
@@ -55,7 +56,10 @@ public class Pathfind : MonoBehaviour
         switch (state)
         {
             case State.TARGET:
-                transform.LookAt(player);
+                // TODO: Do this smoothly
+                // transform.LookAt(player);
+                var targetRotation = Quaternion.LookRotation(player.position - transform.position);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookAtSpeed * Time.deltaTime);
                 if (distance > stoppingDistance)
                 {
                     SmoothMoveTowards(player.position, moveSpeed);

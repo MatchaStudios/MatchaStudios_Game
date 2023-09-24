@@ -14,7 +14,7 @@ public class SimpleBullet : MonoBehaviour
     {
         //Vector3.right is X axis.
         //rotate the X axis 90 degrees to make it look like bullet.
-        transform.Rotate(Vector3.right, 90.0f);
+        // transform.Rotate(Vector3.right, 90.0f);
         coll = GetComponent<Collider>();
         //ownerName = gameObject.tag;
     }
@@ -24,6 +24,7 @@ public class SimpleBullet : MonoBehaviour
         //transform.up is the Y axis.
         //then move the the bullet towards the target in Y direction each update.
         //transform.position += transform.up * speed * Time.deltaTime;
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,17 +38,20 @@ public class SimpleBullet : MonoBehaviour
             // This might mean enemies bullets will phase through enemies. 
             if (other.gameObject.tag == "AI")
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                //Destroy(gameObject);
             }
             if (other.gameObject.tag == "Player")
             {
+                gameObject.SetActive(false);
                 //delete the bullet.
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             if (other.gameObject.tag == "Environment")
             {
+                gameObject.SetActive(false);
                 //delete the bullet.
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
     }

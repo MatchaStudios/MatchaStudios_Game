@@ -47,7 +47,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7304042638919330411}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2432090755550338912, guid: 0afaa66bc1b220443a626face0534484, type: 3}
 --- !u!23 &7304042638919330408
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0e06f0a02054bbf4782cf7ceaa493c02, type: 2}
+  - {fileID: 2100000, guid: 4de680231545e9842bf0aff8b496ce7e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   avoidSpeedPercentage: 0.5
   avoidSpeed: 10
   stoppingDistance: 20
+  lookAtSpeed: 1
   player: {fileID: 0}
   rayCount: 10
   rayLength: 5
@@ -189,6 +190,7 @@ MonoBehaviour:
   bulletSpeed: 10
   inheritVelocity: 0
   weaponDamage: 0
+  GameManager: {fileID: 0}
 --- !u!114 &4991320048628527811
 MonoBehaviour:
   m_ObjectHideFlags: 0
