@@ -33,6 +33,10 @@ public class ObjectPooling : MonoBehaviour
             for(int p = 0; p < poolSize[i]; p++)
             {
                 GameObject obj = Instantiate(prefabs[j]);
+
+                //Force all cloned object to have same name as prefab
+                obj.name = prefabs[j].name;
+
                 obj.SetActive(false);
                 objectPool.Add(obj);
             }
@@ -40,11 +44,13 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
-    public GameObject GetObjectFromPool(GameObject goType)
+    public GameObject GetObjectFromPool(string type)
     {
         foreach (GameObject obj in objectPool)
         {
-            if (obj.activeInHierarchy == false && goType)
+            // If active, and matches object type by name
+            // We forced object name to match prefab in instantiation
+            if (obj.activeInHierarchy == false && obj.name == type)
             {
                 //obj.transform.position = position;
                 //obj.transform.rotation = rotation;

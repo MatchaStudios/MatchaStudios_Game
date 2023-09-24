@@ -8,6 +8,7 @@ public class Missile : MonoBehaviour
     public float acceleration = 2.0f;
     public float maxSpeed = 10.0f;
     public float explosionTimer = 3.0f;
+    public float lookAtSpeed = 2.0f;
 
     private Rigidbody rb;
     private float currentSpeed = 0.0f;
@@ -46,41 +47,7 @@ public class Missile : MonoBehaviour
 
     void Start()
     {
-        ejectTimer = gameObject.AddComponent<Timer>();
-        ejectTimer.timerSet = setEjectTimer;
-
-        waitTimer = gameObject.AddComponent<Timer>();
-        waitTimer.timerSet = setWaitTimer;
-
-
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = GetComponent<Rigidbody>();
-        //rb.velocity = ejectDirection * currentSpeed;
-
-        switch(ejectDirection)
-        {
-            case Direction.LEFT:
-                ejectDirectionVector = -transform.right;
-                break;
-            case Direction.RIGHT:
-                ejectDirectionVector = transform.right;
-                break;
-            case Direction.UP:
-                ejectDirectionVector = transform.up;
-                break;
-            case Direction.DOWN:
-                ejectDirectionVector = -transform.up;
-                break;
-            case Direction.FORWARD:
-                ejectDirectionVector = transform.forward;
-                break;
-            case Direction.BACKWARD:
-                ejectDirectionVector = -transform.forward;
-                break;
-        }
-
-        
-        Invoke("Explode", explosionTimer);
+        Init();
     }
 
     void Update()
@@ -90,7 +57,10 @@ public class Missile : MonoBehaviour
             return;
         }
 
-        switch(phase)
+        Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookAtSpeed * Time.deltaTime);
+
+        switch (phase)
         {
             case Phase.EJECT:
                 //rb.AddForce(ejectForce * ejectDirectionVector, ForceMode.Acceleration);
@@ -158,16 +128,62 @@ public class Missile : MonoBehaviour
 
         rb.velocity = directionToPlayer * currentSpeed;
 
-        //// Check if missile has reached player (you can implement a proximity check here)
-        //if (Vector3.Distance(transform.position, player.position) <= 3.0f)
-        //{
-        //    Explode();
-        //}
+        // Check if missile has reached player (you can implement a proximity check here)
+        if (Vector3.Distance(transform.position, player.position) <= 3.0f)
+        {
+            Explode();
+        }
     }
 
     void Explode()
     {
         // Implement explosion logic here
-        Destroy(gameObject);
+        waitTimer.ResetTimer();
+        ejectTimer.ResetTimer();
+
+        gameObject.SetActive(false);
+    }
+
+    public void Init()
+    {
+        currentSpeed = 0f;
+        phase = Phase.EJECT;
+
+        ejectTimer = gameObject.AddComponent<Timer>();
+        ejectTimer.timerSet = setEjectTimer;
+
+        
+        waitTimer = gameObject.AddComponent<Timer>();
+        waitTimer.timerSet = setWaitTimer;
+
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = GetComponent<Rigidbody>();
+        //rb.velocity = ejectDirection * currentSpeed;
+
+        switch (ejectDirection)
+        {
+            case Direction.LEFT:
+                ejectDirectionVector = -transform.right;
+                break;
+            case Direction.RIGHT:
+                ejectDirectionVector = transform.right;
+                break;
+            case Direction.UP:
+                ejectDirectionVector = transform.up;
+                break;
+            case Direction.DOWN:
+                ejectDirectionVector = -transform.up;
+                break;
+            case Direction.FORWARD:
+                ejectDirectionVector = transform.forward;
+                break;
+            case Direction.BACKWARD:
+                ejectDirectionVector = -transform.forward;
+                break;
+        }
+
+
+        Invoke("Explode", explosionTimer);
     }
 }

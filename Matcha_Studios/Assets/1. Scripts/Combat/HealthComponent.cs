@@ -83,7 +83,7 @@ public class HealthComponent : MonoBehaviour
 
         if (curHealth <= 0)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 

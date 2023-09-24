@@ -35,7 +35,8 @@ public class EnemyHealth : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Instantiate(ExplosionParticle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            
         }        
     }
+
 }

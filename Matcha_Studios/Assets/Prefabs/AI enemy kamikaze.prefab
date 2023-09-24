@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1709786719033001865}
   - component: {fileID: 3902489663005817750}
   - component: {fileID: 9186243188643867661}
+  - component: {fileID: 5690782495990765647}
   m_Layer: 6
   m_Name: AI enemy kamikaze
   m_TagString: AI
@@ -135,7 +136,7 @@ MonoBehaviour:
   setEjectTimer: 0.5
   waitTimer: {fileID: 0}
   setWaitTimer: 1.5
-  ejectDirection: 3
+  ejectDirection: 2
 --- !u!114 &9186243188643867661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4140622200622995564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a2bbf5a7bdaf2642aa90a7a7820aa74, type: 3}
   m_Name: 
@@ -152,3 +153,21 @@ MonoBehaviour:
   curHealth: 0
   maxHealth: 0
   ExplosionParticle: {fileID: 2917455447259711497, guid: 45760871695549349b3935b20f04e5e3, type: 3}
+--- !u!114 &5690782495990765647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140622200622995564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9ce5e59931e24408b5ee2918ba2487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  isAlive: 1
+  initHealth: 0
+  curHealth: 0
+  maxHealth: 0

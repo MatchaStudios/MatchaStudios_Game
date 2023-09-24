@@ -7,8 +7,12 @@ public class SimpleBullet : MonoBehaviour
     public float speed = 5.0f;
     public string team = "No Team";
     public float damage = 0f;
+
+    // ObjectSpawnFrom should have been registered when instantiated in Shoot.cs.
     public GameObject objectSpawnedFrom;
     Collider coll;
+
+    public float destroyBulletTimer = 10f;
 
     private void Start()
     {
@@ -17,6 +21,16 @@ public class SimpleBullet : MonoBehaviour
         // transform.Rotate(Vector3.right, 90.0f);
         coll = GetComponent<Collider>();
         //ownerName = gameObject.tag;
+    }
+
+    public void Init()
+    {
+        Invoke("DestroyBullet", destroyBulletTimer);
+    }
+
+    void DestroyBullet()
+    {
+        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -29,7 +43,7 @@ public class SimpleBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject == objectSpawnedFrom)
+        if (other.gameObject == objectSpawnedFrom)
         {
             // Don't delete if it belongs to owner. 
         }
@@ -55,6 +69,8 @@ public class SimpleBullet : MonoBehaviour
             }
         }
     }
+
+    
 
     //TODO:
     //Make object pooling.

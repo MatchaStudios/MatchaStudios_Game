@@ -58,7 +58,7 @@ public class Pathfind : MonoBehaviour
             case State.TARGET:
                 // TODO: Do this smoothly
                 // transform.LookAt(player);
-                var targetRotation = Quaternion.LookRotation(player.position - transform.position);
+                Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookAtSpeed * Time.deltaTime);
                 if (distance > stoppingDistance)
                 {
@@ -115,8 +115,8 @@ public class Pathfind : MonoBehaviour
 
             float distance = Vector3.Distance(transform.position, player.position);
 
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, rayDirection, out hit, rayLength))
+            //RaycastHit hit;
+            if (Physics.Raycast(transform.position, rayDirection, out RaycastHit hit, rayLength))
             {
                 if (hit.collider.CompareTag("Environment"))
                 {
