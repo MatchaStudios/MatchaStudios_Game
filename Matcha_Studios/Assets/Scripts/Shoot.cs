@@ -47,10 +47,11 @@ public class Shoot : MonoBehaviour
 
     void Targetting()
     {
-
         Vector3 rayDirection = transform.forward;
         float rayLength = shootRange;
-        if (Physics.Raycast(transform.position, rayDirection, out RaycastHit hit, rayLength))
+        int layerMask = 1 << LayerMask.NameToLayer("Bullet"); // Create a layer mask that only includes the "Bullet" layer.
+        
+        if (Physics.Raycast(transform.position, rayDirection, out RaycastHit hit, rayLength, ~layerMask))
         {
             if (hit.collider.CompareTag("Player"))
             {
