@@ -61,8 +61,7 @@ public class Shoot : MonoBehaviour
 
     void SpawnObject()
     {
-        // spawns bullet
-        //GameObject spawnedObject = Instantiate(bulletType, transform.position, Quaternion.identity);
+        // "spawns" bullet by setting to active.
 
         GameObject spawnedObject = objectPooling.GetObjectFromPool(bulletType.name);
         Debug.Log("Bullet Name: " + bulletType.name);
@@ -82,16 +81,16 @@ public class Shoot : MonoBehaviour
             // spawnedObject.SetActive(true);
         }
 
-        // Get Simple Bullet Script. Not every bullet has one!
-        // if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
-        // {
-        //     bullet.Init();
-        //     bullet.damage = weaponDamage;
-        //     bullet.team = gameObject.tag;
+        //Get Simple Bullet Script. Not every bullet has one!
+         if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
+        {
+            bullet.Init();
+            bullet.damage = weaponDamage;
+            bullet.team = gameObject.tag;
 
-        //     // Register the owner of the bullet
-        //     bullet.objectSpawnedFrom = gameObject;
-        // }
+            // Register the owner of the bullet
+            bullet.objectSpawnedFrom = gameObject;
+        }
 
         if (spawnedObject.TryGetComponent<Missile>(out Missile missile))
         {
@@ -123,9 +122,5 @@ public class Shoot : MonoBehaviour
             // bullet's transform.up.
             rb.velocity += bulletSpeed * transform.forward;
         }
-
-
-
-
     }
 }

@@ -16,9 +16,6 @@ public class SimpleBullet : MonoBehaviour
 
     private void Start()
     {
-        //Vector3.right is X axis.
-        //rotate the X axis 90 degrees to make it look like bullet.
-        // transform.Rotate(Vector3.right, 90.0f);
         coll = GetComponent<Collider>();
         // explodeTimer = gameObject.AddComponent<Timer>();
         //explodeTimer.timerSet = bulletLifetime;
@@ -27,8 +24,8 @@ public class SimpleBullet : MonoBehaviour
 
     public void Init()
     {
-       // if (explodeTimer)
-        //    explodeTimer.ResetTimer();
+        if (explodeTimer)
+            explodeTimer.ResetTimer();
     }
 
     void DestroyBullet()
@@ -38,15 +35,14 @@ public class SimpleBullet : MonoBehaviour
 
     private void Update()
     {
-
-        // if (explodeTimer.GetTimerStopped() == false)
-        // {
-        //     explodeTimer.UpdateTimer();
-        // }
-        // else
-        // {
-        //     DestroyBullet();
-        // }
+        if (explodeTimer.GetTimerStopped() == false)
+        {
+            explodeTimer.UpdateTimer();
+        }
+        else
+        {
+            DestroyBullet();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,26 +57,15 @@ public class SimpleBullet : MonoBehaviour
             if (other.gameObject.tag == "AI")
             {
                 gameObject.SetActive(false);
-                //Destroy(gameObject);
             }
             if (other.gameObject.tag == "Player")
             {
                 gameObject.SetActive(false);
-                //delete the bullet.
-                //Destroy(gameObject);
             }
             if (other.gameObject.tag == "Environment")
             {
                 gameObject.SetActive(false);
-                //delete the bullet.
-                //Destroy(gameObject);
             }
         }
     }
-
-
-
-    //TODO:
-    //Make object pooling.
-
 }
