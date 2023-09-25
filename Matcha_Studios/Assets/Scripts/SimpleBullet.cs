@@ -12,20 +12,20 @@ public class SimpleBullet : MonoBehaviour
     public GameObject objectSpawnedFrom;
     Collider coll;
     public float bulletLifetime = 10f;
-    Timer explodeTimer;
+    Timer lifeTimer;
 
     private void Start()
     {
         coll = GetComponent<Collider>();
-        // explodeTimer = gameObject.AddComponent<Timer>();
-        //explodeTimer.timerSet = bulletLifetime;
+        lifeTimer = gameObject.AddComponent<Timer>();
+        lifeTimer.timerSet = bulletLifetime;
         //ownerName = gameObject.tag;
     }
 
     public void Init()
     {
-        if (explodeTimer)
-            explodeTimer.ResetTimer();
+        if (lifeTimer)
+            lifeTimer.ResetTimer();
     }
 
     void DestroyBullet()
@@ -35,9 +35,12 @@ public class SimpleBullet : MonoBehaviour
 
     private void Update()
     {
-        if (explodeTimer.GetTimerStopped() == false)
+        if (lifeTimer == null)
+            return;
+
+        if (lifeTimer.GetTimerStopped() == false)
         {
-            explodeTimer.UpdateTimer();
+            lifeTimer.UpdateTimer();
         }
         else
         {
