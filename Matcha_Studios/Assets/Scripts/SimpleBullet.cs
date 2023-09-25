@@ -11,8 +11,8 @@ public class SimpleBullet : MonoBehaviour
     // ObjectSpawnFrom should have been registered when instantiated in Shoot.cs.
     public GameObject objectSpawnedFrom;
     Collider coll;
-
-    public float destroyBulletTimer = 10f;
+    public float bulletLifetime = 10f;
+    Timer explodeTimer;
 
     private void Start()
     {
@@ -20,12 +20,15 @@ public class SimpleBullet : MonoBehaviour
         //rotate the X axis 90 degrees to make it look like bullet.
         // transform.Rotate(Vector3.right, 90.0f);
         coll = GetComponent<Collider>();
+        // explodeTimer = gameObject.AddComponent<Timer>();
+        //explodeTimer.timerSet = bulletLifetime;
         //ownerName = gameObject.tag;
     }
 
     public void Init()
     {
-        Invoke("DestroyBullet", destroyBulletTimer);
+       // if (explodeTimer)
+        //    explodeTimer.ResetTimer();
     }
 
     void DestroyBullet()
@@ -35,10 +38,15 @@ public class SimpleBullet : MonoBehaviour
 
     private void Update()
     {
-        //transform.up is the Y axis.
-        //then move the the bullet towards the target in Y direction each update.
-        //transform.position += transform.up * speed * Time.deltaTime;
 
+        // if (explodeTimer.GetTimerStopped() == false)
+        // {
+        //     explodeTimer.UpdateTimer();
+        // }
+        // else
+        // {
+        //     DestroyBullet();
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +57,7 @@ public class SimpleBullet : MonoBehaviour
         }
         else
         {
-            // This might mean enemies bullets will phase through enemies. 
+            // Collision tags
             if (other.gameObject.tag == "AI")
             {
                 gameObject.SetActive(false);
@@ -70,7 +78,7 @@ public class SimpleBullet : MonoBehaviour
         }
     }
 
-    
+
 
     //TODO:
     //Make object pooling.

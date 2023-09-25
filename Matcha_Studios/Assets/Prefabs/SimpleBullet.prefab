@@ -130,3 +130,4 @@ MonoBehaviour:
   team: No Team
   damage: 0
   objectSpawnedFrom: {fileID: 0}
+  bulletLifetime: 10

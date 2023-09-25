@@ -131,6 +131,7 @@ MonoBehaviour:
   acceleration: 5
   maxSpeed: 20
   explosionTimer: 50
+  lookAtSpeed: 2
   ejectForce: 40
   ejectTimer: {fileID: 0}
   setEjectTimer: 0.5

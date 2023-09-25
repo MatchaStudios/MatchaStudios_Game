@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2022,7 +2022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304042638919330411, guid: d58c0cd3278d1464c8a5f05fc333f47b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58c0cd3278d1464c8a5f05fc333f47b, type: 3}
@@ -4732,7 +4732,7 @@ MonoBehaviour:
   - {fileID: 8728680355375634011, guid: df1061399b1ed694c88b297b98e4c1d3, type: 3}
   - {fileID: 5514170091429913893, guid: 08d2e3a657359db4dab35d9c675e4c98, type: 3}
   - {fileID: 4140622200622995564, guid: 397471691095ea644a18adfbabc924e4, type: 3}
-  poolSize: 320000001400000014000000
+  poolSize: 140000001400000014000000
 --- !u!4 &1561739080
 Transform:
   m_ObjectHideFlags: 0
@@ -4759,6 +4759,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0bf1a606338be4080eb9841b1f694f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1575924127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6668355294183753370, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+  m_PrefabInstance: {fileID: 2107111811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1595792542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 869451914058583207, guid: ea931997cfc6432459a51b8ee0d7c6e3, type: 3}
@@ -5345,13 +5350,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5838684787630860425, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: fireRate
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838684787630860425, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: bulletType
+      value: 
+      objectReference: {fileID: 8728680355375634011, guid: df1061399b1ed694c88b297b98e4c1d3, type: 3}
+    - target: {fileID: 5838684787630860425, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: spawnPosition
+      value: 
+      objectReference: {fileID: 1575924127}
+    - target: {fileID: 5991645611476542929, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661905, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_Radius
       value: 0.83
       objectReference: {fileID: 0}
+    - target: {fileID: 6850854620000661906, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661907, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_Name
       value: AI Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6850854620000661907, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661918, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_RootOrder
@@ -5363,11 +5392,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661918, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.72
+      value: 8.76
       objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661918, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.99
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 6850854620000661918, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5398,6 +5427,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6862005224686860213, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7898077755033976256, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

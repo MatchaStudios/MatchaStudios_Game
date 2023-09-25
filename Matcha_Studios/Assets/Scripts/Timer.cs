@@ -34,6 +34,7 @@ public class Timer : MonoBehaviour
     {
 
     }
+    
     public void UpdateTimer()
     {
         if (time >= 0)

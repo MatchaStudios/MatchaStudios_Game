@@ -5,21 +5,21 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject bulletType;
-    public float spawnRate = 1.0f; // Spawn once per second
+    public float fireRate = 300.0f; // Rounds per minute
     public float bulletSpeed = 10f;
     public bool inheritVelocity = false;
     public float weaponDamage = 0f;
 
     public float shootRange = 100f;
 
-    private float nextSpawnTime;
+    private float timeSinceFired;
 
     public Transform spawnPosition;
 
     public GameObject GameManager;
     ObjectPooling objectPooling;
 
-    
+
 
     void Start()
     {
@@ -28,29 +28,33 @@ public class Shoot : MonoBehaviour
         {
             objectPooling = GameManager.GetComponent<ObjectPooling>();
         }
-
-        nextSpawnTime = Time.time + spawnRate;
     }
 
     void Update()
     {
-        if (Time.time >= nextSpawnTime)
-        {
-            Targetting();
-            nextSpawnTime = Time.time + spawnRate;
-        }
+        Targetting();
+    }
 
+    void Fire()
+    {
+        float interval = 1f / (fireRate / 60 /* seconds */);
+        if(Time.time > timeSinceFired)
+        {
+            SpawnObject();  
+            timeSinceFired = Time.time + interval;
+        }
     }
 
     void Targetting()
     {
+
         Vector3 rayDirection = transform.forward;
         float rayLength = shootRange;
         if (Physics.Raycast(transform.position, rayDirection, out RaycastHit hit, rayLength))
         {
             if (hit.collider.CompareTag("Player"))
             {
-                SpawnObject();
+                Fire();
             }
         }
     }
@@ -61,6 +65,7 @@ public class Shoot : MonoBehaviour
         //GameObject spawnedObject = Instantiate(bulletType, transform.position, Quaternion.identity);
 
         GameObject spawnedObject = objectPooling.GetObjectFromPool(bulletType.name);
+        Debug.Log("Bullet Name: " + bulletType.name);
 
         if (spawnedObject != null)
         {
@@ -74,29 +79,28 @@ public class Shoot : MonoBehaviour
                 spawnedObject.transform.position = transform.position;
                 spawnedObject.transform.rotation = Quaternion.identity;
             }
-            spawnedObject.SetActive(true);
+            // spawnedObject.SetActive(true);
         }
 
         // Get Simple Bullet Script. Not every bullet has one!
-        if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
-        {
-            bullet.Init();
+        // if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
+        // {
+        //     bullet.Init();
+        //     bullet.damage = weaponDamage;
+        //     bullet.team = gameObject.tag;
 
-            bullet.damage = weaponDamage;
-            bullet.team = gameObject.tag;
-
-            // Register the owner of the bullet
-            bullet.objectSpawnedFrom = gameObject;
-        }
+        //     // Register the owner of the bullet
+        //     bullet.objectSpawnedFrom = gameObject;
+        // }
 
         if (spawnedObject.TryGetComponent<Missile>(out Missile missile))
         {
             missile.Init();
         }
 
-            // Shoots in the direction that the enemy is facing.
-            // Every object should have transform.
-            spawnedObject.transform.rotation = transform.rotation;
+        // Shoots in the direction that the enemy is facing.
+        // Every object should have transform.
+        spawnedObject.transform.rotation = transform.rotation;
 
         // Only works for capsule bullets, is incompatible with other bullets
         //spawnedObject.transform.Rotate(Vector3.right, 90.0f);
@@ -122,6 +126,6 @@ public class Shoot : MonoBehaviour
 
 
 
-        
+
     }
 }
