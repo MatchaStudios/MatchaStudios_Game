@@ -101,7 +101,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.83
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2437782229683040780
 Rigidbody:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletType: {fileID: 8728680355375634011, guid: df1061399b1ed694c88b297b98e4c1d3, type: 3}
-  fireRate: 600
+  fireRate: 100
   bulletSpeed: 10
   inheritVelocity: 0
   weaponDamage: 1
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6850854620000661907}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1abbaf7b3477594459d051ebe4979ee1, type: 3}
   m_Name: 

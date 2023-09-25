@@ -35,6 +35,8 @@ public class SimpleBullet : MonoBehaviour
 
     private void Update()
     {
+        // Todo: fix this.
+        // its not setting properly.
         if (explodeTimer.GetTimerStopped() == false)
         {
             explodeTimer.UpdateTimer();
