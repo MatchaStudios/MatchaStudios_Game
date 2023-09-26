@@ -41,16 +41,30 @@ public class HealthComponent : MonoBehaviour
     private void Update()
     {
         // healthText.text = "Health: " + curHealth + "%";
+        if(curHealth > 0)
+        {
+            isAlive = true;
+        }
 
         if (curHealth > maxHealth)
         {
             curHealth = maxHealth;
         }
 
+        // Death
         if (curHealth <= 0)
         {
             curHealth = 0;
             isAlive = false;
+
+            GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
+            if (spawnedObject != null)
+            {
+                spawnedObject.transform.position = transform.position;
+                spawnedObject.transform.rotation = Quaternion.identity;
+            }
+
+            gameObject.SetActive(false);
         }
 
         lerpSpeed = 3f * Time.deltaTime;
@@ -69,7 +83,23 @@ public class HealthComponent : MonoBehaviour
             }
             else
             {
+                if (hitParticle)
+                {
+                    GameObject spawnedObject = objectPooling.GetObjectFromPool(hitParticle.name);
+                    if (spawnedObject != null)
+                    {
+                        spawnedObject.transform.position = other.transform.position;
+                        spawnedObject.transform.rotation = Quaternion.identity;
+                    }
+                }
                 TakeDamage(bullet.damage);
+            }
+        }
+        if (other.TryGetComponent<Missile>(out Missile missile))
+        {
+            if (tag == "Player")
+            {
+                TakeDamage(missile.damage);
             }
         }
     }
@@ -89,19 +119,19 @@ public class HealthComponent : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         curHealth -= damage;
-
+        
         // Death
-        if (curHealth <= 0)
-        {
-            GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
-            if (spawnedObject != null)
-            {
-                spawnedObject.transform.position = transform.position;
-                spawnedObject.transform.rotation = Quaternion.identity;
-            }
+        //if (curHealth <= 0)
+        //{
+        //    GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
+        //    if (spawnedObject != null)
+        //    {
+        //        spawnedObject.transform.position = transform.position;
+        //        spawnedObject.transform.rotation = Quaternion.identity;
+        //    }
 
-            gameObject.SetActive(false);
-        }
+        //    gameObject.SetActive(false);
+        //}
     }
 
     public void Heal(float heal)

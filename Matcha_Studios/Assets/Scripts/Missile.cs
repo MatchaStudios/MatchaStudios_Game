@@ -2,25 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Missile : MonoBehaviour
+public class Missile : Timer
 {
+    [Header("=== Missile ===")]
     public Transform player;
-    public float acceleration = 2.0f;
-    public float maxSpeed = 10.0f;
+
     public float explosionTimer = 3.0f;
     public float lookAtSpeed = 2.0f;
 
     private Rigidbody rb;
-    private float currentSpeed = 0.0f;
-    private bool accelerating = true;
 
-    public float ejectForce = 4f;
-    
-    public Timer ejectTimer;
-    public float setEjectTimer = 10f;
+    public float missileAcceleration = 10f;
+    public float topSpeed = 10f;
+    public float ejectSpeed = 4f;
 
-    public Timer waitTimer;
-    public float setWaitTimer = 0.1f;
+    public float deployTime = 2f;
+
+    public float damage = 5f;
 
     public enum Direction
     {
@@ -43,8 +41,6 @@ public class Missile : MonoBehaviour
 
     Phase phase = Phase.EJECT;
 
-    
-
     void Start()
     {
         Init();
@@ -52,9 +48,18 @@ public class Missile : MonoBehaviour
 
     void Update()
     {
-        if(player == null)
+        if (player == null)
         {
             return;
+        }
+
+        if (GetTimerStopped() == false)
+        {
+            UpdateTimer();
+        }
+        else
+        {
+            Explode();
         }
 
         Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
@@ -63,103 +68,60 @@ public class Missile : MonoBehaviour
         switch (phase)
         {
             case Phase.EJECT:
-                //rb.AddForce(ejectForce * ejectDirectionVector, ForceMode.Acceleration);
-                if(ejectTimer.GetTimerStopped() == false)
-                {
-                    ejectTimer.UpdateTimer();
-                    Eject();
-                }
-                else
-                {
-                    // immediately switch to ACCELERATE mode
-                    phase = Phase.WAIT; 
-                }
+                rb.velocity = ejectDirectionVector * ejectSpeed;
+                Invoke("Accelerate", deployTime);
+                phase = Phase.WAIT;
                 break;
             case Phase.WAIT:
-                
-                if (waitTimer.GetTimerStopped() == false)
-                {
-                    waitTimer.UpdateTimer();
-                }
-                else
-                {
-                    // immediately switch to ACCELERATE mode
-                    phase = Phase.ACCELERATE;
-                }
+                // Do nothing because Invoke was called.
                 break;
             case Phase.ACCELERATE:
                 Accelerate();
                 break;
         }
-        
-    }
-
-    void Eject()
-    {
-        Vector3 directionToPlayer = (player.position - transform.position).normalized;
-
-        if (accelerating)
-        {
-            currentSpeed += ejectForce * Time.deltaTime; //is a short push per deltatime
-            currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
-        }
-
-        rb.velocity = ejectDirectionVector * currentSpeed;
-
-        // Set the velocity to 0 so missile doesnt move.
-        // rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, setWaitTimer);
-
-        // Check if missile has reached player (you can implement a proximity check here)
-        //if (Vector3.Distance(transform.position, player.position) <= 3.0f)
-        //{
-        //    Explode();
-        //}
     }
 
     void Accelerate()
     {
-        Vector3 directionToPlayer = (player.position - transform.position).normalized;
+        // Force acceleration phase, nothing can stop this missile from
+        // accelerating now! Unless something external change phase.
+        phase = Phase.ACCELERATE;
+        rb.AddForce(missileAcceleration * transform.forward, ForceMode.Acceleration);
 
-        if (accelerating)
+        // Cap top speed of missile so it doesn't accelerate any further.
+        if (rb.velocity.magnitude >= topSpeed)
         {
-            currentSpeed += acceleration * Time.deltaTime; //is a short push per deltatime
-            currentSpeed = Mathf.Min(currentSpeed, maxSpeed);
+            rb.velocity = topSpeed * transform.forward;
         }
-
-        rb.velocity = directionToPlayer * currentSpeed;
 
         // Check if missile has reached player (you can implement a proximity check here)
         if (Vector3.Distance(transform.position, player.position) <= 3.0f)
         {
             Explode();
         }
+
     }
 
     void Explode()
     {
-        // Implement explosion logic here
-        waitTimer.ResetTimer();
-        ejectTimer.ResetTimer();
-
-        gameObject.SetActive(false);
+        // force health to become 0 when timer is up.
+        if (this.TryGetComponent<HealthComponent>(out HealthComponent health))
+        {
+            health.curHealth = 0;
+        }
     }
 
     public void Init()
     {
-        currentSpeed = 0f;
         phase = Phase.EJECT;
 
-        ejectTimer = gameObject.AddComponent<Timer>();
-        ejectTimer.timerSet = setEjectTimer;
+        ResetTimer();
+        timerSet = explosionTimer;
 
-        
-        waitTimer = gameObject.AddComponent<Timer>();
-        waitTimer.timerSet = setWaitTimer;
-
+        ResetHealth();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
-        //rb.velocity = ejectDirection * currentSpeed;
 
         switch (ejectDirection)
         {
@@ -184,6 +146,14 @@ public class Missile : MonoBehaviour
         }
 
 
-        Invoke("Explode", explosionTimer);
+        //Invoke("Explode", explosionTimer);
+    }
+
+    void ResetHealth()
+    {
+        if (this.TryGetComponent<HealthComponent>(out HealthComponent health))
+        {
+            health.curHealth = health.initHealth;
+        }
     }
 }

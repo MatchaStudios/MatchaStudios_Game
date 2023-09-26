@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleBullet : MonoBehaviour
+public class SimpleBullet : Timer
 {
+    [Header("=== Simple Bullet ===")]
     public float speed = 5.0f;
     public string team = "No Team";
     public float damage = 0f;
@@ -11,8 +12,14 @@ public class SimpleBullet : MonoBehaviour
     // ObjectSpawnFrom should have been registered when instantiated in Shoot.cs.
     public GameObject objectSpawnedFrom;
     Collider coll;
-    public float bulletLifetime = 10f;
-    Timer explodeTimer;
+    //public float bulletLifetime = 10f;
+
+    /*
+     * Inheritance of Timer class
+     */
+    //public float time = 0f;
+    //public float timerSet = 10f;
+    //private bool timeStop = false;
 
     private void Start()
     {
@@ -24,8 +31,8 @@ public class SimpleBullet : MonoBehaviour
 
     public void Init()
     {
-        if (explodeTimer)
-            explodeTimer.ResetTimer();
+        if (GetTimer())
+            GetTimer().ResetTimer();
     }
 
     void DestroyBullet()
@@ -37,14 +44,16 @@ public class SimpleBullet : MonoBehaviour
     {
         // Todo: fix this.
         // its not setting properly.
-        //if (explodeTimer.GetTimerStopped() == false)
-        //{
-        //    explodeTimer.UpdateTimer();
-        //}
-        //else
-        //{
-        //    DestroyBullet();
-        //}
+
+        if (GetTimer().GetTimerStopped() == false)
+        {
+            GetTimer().UpdateTimer();
+        }
+        else
+        {
+            DestroyBullet();
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

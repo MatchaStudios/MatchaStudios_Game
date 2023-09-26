@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7405580569073102344}
   - component: {fileID: 7405580569073102347}
   - component: {fileID: 7405580569073102346}
-  - component: {fileID: 7405580569073102345}
+  - component: {fileID: -8478054822804180356}
   m_Layer: 6
   m_Name: AI Enemy SpaceShip Carrier
   m_TagString: AI
@@ -160,21 +160,27 @@ MonoBehaviour:
   shootRange: 100
   spawnPosition: {fileID: 128216811964282790}
   GameManager: {fileID: 0}
---- !u!114 &7405580569073102345
+--- !u!114 &-8478054822804180356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7405580569073102449}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddb7006b92da3c499684526db7c6790, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a9ce5e59931e24408b5ee2918ba2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buzzingFrequency: 1
-  buzzingAmplitude: 0.1
-  buzzingSpeed: 1
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  isAlive: 1
+  initHealth: 0
+  curHealth: 0
+  maxHealth: 12
+  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  hitParticle: {fileID: 0}
+  GameManager: {fileID: 0}
 --- !u!1 &9183310217201525917
 GameObject:
   m_ObjectHideFlags: 0

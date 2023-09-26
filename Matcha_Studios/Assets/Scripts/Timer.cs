@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
+    [Header("=== Timer ===")]
     public float time = 0f;
     public float timerSet = 10f;
-
     private bool timeStop = false;
 
-    public Timer(float setTime)
+    //public Timer(float setTime)
+    //{
+    //    timerSet = setTime;
+    //    time = timerSet;
+    //    timeStop = false;
+    //}
+
+    public Timer GetTimer()
     {
-        timerSet = setTime;
-        time = timerSet;
-        timeStop = false;
+        return this;
     }
 
     public bool GetTimerStopped()

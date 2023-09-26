@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 8915094465428897651}
   - component: {fileID: 3313212546132981366}
   m_Layer: 6
-  m_Name: AI Enemy Oribital
+  m_Name: AI Enemy Orbital
   m_TagString: AI
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -238,6 +238,9 @@ MonoBehaviour:
   healthText: {fileID: 0}
   healthBar: {fileID: 0}
   isAlive: 1
-  initHealth: 0
-  curHealth: 0
-  maxHealth: 0
+  initHealth: 5
+  curHealth: 5
+  maxHealth: 5
+  deathParticle: {fileID: 0}
+  hitParticle: {fileID: 0}
+  GameManager: {fileID: 0}
