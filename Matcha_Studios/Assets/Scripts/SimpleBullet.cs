@@ -37,14 +37,14 @@ public class SimpleBullet : MonoBehaviour
     {
         // Todo: fix this.
         // its not setting properly.
-        if (explodeTimer.GetTimerStopped() == false)
-        {
-            explodeTimer.UpdateTimer();
-        }
-        else
-        {
-            DestroyBullet();
-        }
+        //if (explodeTimer.GetTimerStopped() == false)
+        //{
+        //    explodeTimer.UpdateTimer();
+        //}
+        //else
+        //{
+        //    DestroyBullet();
+        //}
     }
 
     private void OnTriggerEnter(Collider other)

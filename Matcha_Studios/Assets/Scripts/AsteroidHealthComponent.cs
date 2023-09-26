@@ -12,11 +12,11 @@ public class AsteroidHealthComponent : HealthComponent
     }
 
 
-    protected override void OnDestroy()
-    {
-        if (destructionParticles) Destroy(Instantiate(destructionParticles, transform.position, Quaternion.identity), 2f);
-        // Play explosion sound
+    //protected override void OnDestroy()
+    //{
+    //    if (destructionParticles) Destroy(Instantiate(destructionParticles, transform.position, Quaternion.identity), 2f);
+    //    // Play explosion sound
 
-        base.OnDestroy();
-    }
+    //    base.OnDestroy();
+    //}
 }

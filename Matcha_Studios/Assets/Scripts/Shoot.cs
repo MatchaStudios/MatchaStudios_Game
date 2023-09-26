@@ -79,7 +79,6 @@ public class Shoot : MonoBehaviour
                 spawnedObject.transform.position = transform.position;
                 spawnedObject.transform.rotation = Quaternion.identity;
             }
-            // spawnedObject.SetActive(true);
         }
 
         //Get Simple Bullet Script. Not every bullet has one!
@@ -100,7 +99,7 @@ public class Shoot : MonoBehaviour
 
         // Shoots in the direction that the enemy is facing.
         // Every object should have transform.
-        spawnedObject.transform.rotation = transform.rotation;
+        //spawnedObject.transform.rotation = transform.rotation;
 
         // Only works for capsule bullets, is incompatible with other bullets
         //spawnedObject.transform.Rotate(Vector3.right, 90.0f);

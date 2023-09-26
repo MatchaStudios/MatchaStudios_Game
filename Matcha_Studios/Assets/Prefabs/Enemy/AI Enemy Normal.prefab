@@ -16,11 +16,10 @@ GameObject:
   - component: {fileID: 6850854620000661906}
   - component: {fileID: 7898077755033976256}
   - component: {fileID: 5838684787630860425}
-  - component: {fileID: 5719037073229622672}
   - component: {fileID: 5991645611476542929}
   - component: {fileID: 6862005224686860213}
   m_Layer: 6
-  m_Name: AI Enemy
+  m_Name: AI Enemy Normal
   m_TagString: AI
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -180,22 +179,6 @@ MonoBehaviour:
   shootRange: 100
   spawnPosition: {fileID: 6668355294183753370}
   GameManager: {fileID: 0}
---- !u!114 &5719037073229622672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6850854620000661907}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a2bbf5a7bdaf2642aa90a7a7820aa74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initHealth: 0
-  curHealth: 0
-  maxHealth: 0
-  ExplosionParticle: {fileID: 2917455447259711497, guid: 45760871695549349b3935b20f04e5e3, type: 3}
 --- !u!114 &5991645611476542929
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 95340078890066531}
   - component: {fileID: 2991964755033037609}
   - component: {fileID: 1774455871235473341}
+  - component: {fileID: 2194694188428441144}
   m_Layer: 0
-  m_Name: Asteroid 1
+  m_Name: Static Enemy Asteroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3033667219593020291, guid: 44a09cf7fc5c1164a8acb8a2bd50267a, type: 3}
+  - {fileID: 2100000, guid: 7c30e84ceddf74e4084bf50532a2d8ff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,3 +82,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2194694188428441144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215658093235908952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9ce5e59931e24408b5ee2918ba2487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  isAlive: 1
+  initHealth: 0
+  curHealth: 0
+  maxHealth: 0

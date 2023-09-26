@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7405580569073102346}
   - component: {fileID: 7405580569073102345}
   m_Layer: 6
-  m_Name: Big Enemy Carrier
+  m_Name: AI Enemy SpaceShip Carrier
   m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

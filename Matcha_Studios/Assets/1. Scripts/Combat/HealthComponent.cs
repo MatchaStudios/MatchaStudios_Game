@@ -6,25 +6,36 @@ using UnityEngine.UI;
 public class HealthComponent : MonoBehaviour
 {
     [Header("=== Player Only ===")]
-    public Text healthText;
-    public Image healthBar;
+    public Text             healthText;
+    public Image            healthBar;
 
     [Header("=== For All ===")]
-    public bool isAlive = true;
+    public bool             isAlive = true;
 
-    float lerpSpeed;
+    float                   lerpSpeed;
 
-    public float initHealth,
-                    curHealth,
-                    maxHealth;
+    public float            initHealth,
+                            curHealth,
+                            maxHealth;
+
+    public ParticleSystem   deathParticle,
+                            hitParticle;
+
+    public GameObject GameManager;
+    ObjectPooling objectPooling;
 
 
     void Start()
     {
+        GameManager = GameObject.Find("GameManager");
+        if (GameManager != null)
+        {
+            objectPooling = GameManager.GetComponent<ObjectPooling>();
+        }
+
         isAlive = true;
         initHealth = maxHealth;
         curHealth = maxHealth;
-
     }
 
     private void Update()
@@ -75,24 +86,23 @@ public class HealthComponent : MonoBehaviour
         healthBar.color = healthColor;
     }
 
-    //----
-
     public virtual void TakeDamage(float damage)
     {
         curHealth -= damage;
 
+        // Death
         if (curHealth <= 0)
         {
+            GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
+            if (spawnedObject != null)
+            {
+                spawnedObject.transform.position = transform.position;
+                spawnedObject.transform.rotation = Quaternion.identity;
+            }
+
             gameObject.SetActive(false);
         }
     }
-
-    protected virtual void OnDestroy()
-    {
-
-    }
-
-    //---
 
     public void Heal(float heal)
     {
