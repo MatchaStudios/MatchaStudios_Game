@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent (typeof(Rigidbody))]
+[RequireComponent((typeof(ShipEnergy)))]
 public class Spaceship : MonoBehaviour
 {
     [Header("=== Ship Movement Settings ===")]
