@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.0056446013, g: 0.050392885, b: 0.08178329, a: 1}
+  m_IndirectSpecularColor: {r: 0.005706853, g: 0.0504621, b: 0.081910215, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1019,7 +1019,7 @@ Transform:
   - {fileID: 540650115}
   - {fileID: 256757545}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540650113
 GameObject:
@@ -1666,8 +1666,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 388283612}
-  m_Follow: {fileID: 388283612}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 70
     OrthographicSize: 5
@@ -1696,7 +1696,7 @@ Transform:
   m_Children:
   - {fileID: 1086932670}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130246284
 GameObject:
@@ -1782,7 +1782,7 @@ Transform:
   - {fileID: 1559554697}
   - {fileID: 1206149031}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1136638551
 MonoBehaviour:
@@ -2032,6 +2032,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hardpointRange: 100
+  laserHitParticles: {fileID: 0}
   lasers:
   - {fileID: 1826919540}
   - {fileID: 148806489}
