@@ -4259,6 +4259,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9aee2258d8bd44df0bacf2aafd620774, type: 3}
   m_PrefabInstance: {fileID: 885329898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &885329900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9aee2258d8bd44df0bacf2aafd620774, type: 3}
+  m_PrefabInstance: {fileID: 885329898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &885329901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885329900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6c39a82b3734d368bfd30f069801de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectivePanel: {fileID: 1191181518}
+  SuccessPanel: {fileID: 442925776}
+--- !u!65 &885329902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885329900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 89.19576, y: 190.46657, z: 88.945244}
+  m_Center: {x: 6.987042, y: 84.14925, z: -3.1419237}
 --- !u!1 &887817521
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,6 +7848,7 @@ GameObject:
   - component: {fileID: 1687258586}
   - component: {fileID: 1687258587}
   - component: {fileID: 1687258588}
+  - component: {fileID: 1687258589}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8006,6 +8039,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dcdb34389569654bb9f4e1debaa8a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1687258589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6c39a82b3734d368bfd30f069801de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectivePanel: {fileID: 0}
+  SuccessPanel: {fileID: 0}
 --- !u!1 &1722339619
 GameObject:
   m_ObjectHideFlags: 0
