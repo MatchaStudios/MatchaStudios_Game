@@ -56,7 +56,7 @@ public class HealthComponent : MonoBehaviour
         {
             curHealth = 0;
             isAlive = false;
-
+            Debug.Log(gameObject.name);
             GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
             if (spawnedObject != null)
             {

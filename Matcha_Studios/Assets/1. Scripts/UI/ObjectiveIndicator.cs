@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TargetIndicator : MonoBehaviour
+public class ObjectiveIndicator : MonoBehaviour
 {
     public int id = 0;
     public Image TargetIndicatorImage;
@@ -23,11 +23,11 @@ public class TargetIndicator : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log("Target " + id + " Initalized");
+        Debug.Log("Objective " + id + " Initalized");
     }
 
     private void OnDisable() {
-        Debug.Log("Target " + id + " Removed");
+        Debug.Log("Objective " + id + " Removed");
     }
     public void DeleteSelf()
     {

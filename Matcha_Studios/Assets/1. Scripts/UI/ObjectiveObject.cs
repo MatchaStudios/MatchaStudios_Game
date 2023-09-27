@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TargetObject : MonoBehaviour
+public class ObjectiveObject : MonoBehaviour
 {
     public int id = 0;
-    private UIController ui;
-    public  TargetIndicator self;
+    private ObjectiveUIController ui;
+    public  ObjectiveIndicator self;
     private void Awake()
     {
-        ui = GetComponentInParent<UIController>();
+        ui = GetComponentInParent<ObjectiveUIController>();
         if (ui == null)
         {
-            ui = GameObject.Find("TrackingCanvas").GetComponent<UIController>();
+            ui = GameObject.Find("ObjectiveCanvas").GetComponent<ObjectiveUIController>();
         }
 
-        if (ui == null) Debug.LogError("No UIController component found");
+        if (ui == null) Debug.LogError("No ObjectiveUIController component found");
 
         ui.AddTargetIndicator(this.gameObject);
 

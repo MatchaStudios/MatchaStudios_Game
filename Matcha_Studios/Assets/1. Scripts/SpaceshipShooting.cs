@@ -15,8 +15,8 @@ public class SpaceshipShooting : MonoBehaviour
     [SerializeField]
     private LayerMask shootableMask;
     [SerializeField]
-    private float hardpointRange = 100f;
-
+    private float hardpointRange = 10000f;
+    [SerializeField] private ParticleSystem laserHitParticles;
     private bool targetInRange = false;
 
     [Header("=== Laser Settings ===")]
@@ -105,7 +105,7 @@ public class SpaceshipShooting : MonoBehaviour
                 Debug.Log("can damage");
                 ApplyDamage(hitInfo.collider.GetComponentInParent<HealthComponent>());
             }
-            //Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
             foreach (var laser in lasers)
             {
