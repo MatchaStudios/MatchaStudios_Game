@@ -132,7 +132,7 @@ MonoBehaviour:
   avoidSpeedPercentage: 0.3
   avoidSpeed: 10
   stoppingDistance: 25
-  lookAtSpeed: 0.2
+  lookAtSpeed: 0.8
   player: {fileID: 0}
   rayCount: 10
   rayLength: 5
