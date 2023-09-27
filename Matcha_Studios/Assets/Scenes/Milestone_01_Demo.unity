@@ -4048,6 +4048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 58386010030827845, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 58386010030827846, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -5296,6 +5300,18 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8d783bd-f39d-4367-9537-3032ac455e60
     m_ActionName: Ship Controls/FireCannon[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 413f8d2b-d3c6-411c-97c7-652b0a53174e
+    m_ActionName: Spawner/Enemy1[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6999ea7c-62ca-49db-9aa2-b0bc6bd2ed65
+    m_ActionName: Spawner/Enemy2[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9c618c47-5c68-478f-b15b-70ab29fba504
+    m_ActionName: Spawner/Enemy3[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Ship Controls
@@ -5681,20 +5697,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSounds:
   - name: Ambience
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 507d837dfc4594fdea5944fd58a39de2, type: 3}
   sfxSounds:
   - name: Laser
-    clip: {fileID: 0}
-  - name: Canon
     clip: {fileID: 8300000, guid: cd26efe52474e4537b1a413fdce12403, type: 3}
+  - name: Canon
+    clip: {fileID: 8300000, guid: 7226957b954fe46e3ac338f7af381ab0, type: 3}
   - name: Impact Hit
-    clip: {fileID: 0}
-  - name: Get Hit
-    clip: {fileID: 0}
-  - name: Shield
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b9c17e9dd03f84933ab4ab0461b03362, type: 3}
+  - name: Shield Get Hit
+    clip: {fileID: 8300000, guid: fdcc059bfe92847cca69eda19d92f840, type: 3}
   - name: Heal
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 33c097cca1321451681815223cfe8ab8, type: 3}
   musicSource: {fileID: 1946466510}
   sfxSource: {fileID: 97953437}
 --- !u!4 &1231800776
