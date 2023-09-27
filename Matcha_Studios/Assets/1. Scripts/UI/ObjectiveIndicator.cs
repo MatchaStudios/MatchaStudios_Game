@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ObjectiveIndicator : MonoBehaviour
 {
     public int id = 0;
     public Image TargetIndicatorImage;
     public Image OffScreenTargetIndicator;
+    public TextMeshProUGUI distText;
+    public Transform playerPos;
     public float OutOfSightOffset = 20f;
     private float outOfSightOffest { get { return OutOfSightOffset /* canvasRect.localScale.x*/; } }
 
@@ -24,6 +27,8 @@ public class ObjectiveIndicator : MonoBehaviour
     private void Start()
     {
         Debug.Log("Objective " + id + " Initalized");
+        playerPos= GameObject.Find("Ship").GetComponent<Transform>();
+        distText = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     private void OnDisable() {
@@ -45,7 +50,7 @@ public class ObjectiveIndicator : MonoBehaviour
     public void UpdateTargetIndicator()
     {
         SetIndicatorPosition();
-
+        distText.text= string.Format("{0}",((int)Vector3.Distance(target.transform.position,playerPos.position)).ToString()) + "km";
         //Adjust distance display
         //Turn on or off when in range/out of range
         //Do stuff if picked as main target
