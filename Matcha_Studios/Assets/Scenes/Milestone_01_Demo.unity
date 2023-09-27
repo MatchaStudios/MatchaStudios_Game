@@ -4050,7 +4050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 58386010030827845, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58386010030827846, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
       propertyPath: m_Enabled
@@ -5427,6 +5427,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   hardpointRange: 100
+  laserHitParticles: {fileID: 0}
   lasers:
   - {fileID: 1826919540}
   - {fileID: 148806489}
