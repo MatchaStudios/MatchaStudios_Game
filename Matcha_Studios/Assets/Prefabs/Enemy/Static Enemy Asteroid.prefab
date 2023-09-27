@@ -101,7 +101,7 @@ MonoBehaviour:
   initHealth: 0
   curHealth: 0
   maxHealth: 1
-  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  deathParticle: {fileID: 794765740704506693, guid: 177df6beda790df48b483b9b9d444994, type: 3}
   hitParticle: {fileID: 0}
   GameManager: {fileID: 0}
 --- !u!114 &8815483426584621377

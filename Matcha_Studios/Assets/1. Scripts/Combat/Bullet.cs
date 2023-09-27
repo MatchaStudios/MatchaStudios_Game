@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
 
             if (hit.collider.GetComponentInParent<HealthComponent>())
             {
-
+                GetComponentInChildren<ParticleSystem>().Play();
                 ApplyDamage(hit.collider.GetComponentInParent<HealthComponent>());
             }
 

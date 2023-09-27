@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5733614544895532802}
   - component: {fileID: 9130025895797586838}
   - component: {fileID: 5605112998527709622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6308902720221970467}
   - component: {fileID: 2709788456492128391}
   - component: {fileID: 3879736326851273368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: big_asteroid.vox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,5 +194,5 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
