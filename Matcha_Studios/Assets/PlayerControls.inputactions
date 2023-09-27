@@ -402,6 +402,71 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Spawner",
+            "id": "ef4b2966-3a32-4604-939b-d50f9ae84169",
+            "actions": [
+                {
+                    "name": "Enemy1",
+                    "type": "Button",
+                    "id": "413f8d2b-d3c6-411c-97c7-652b0a53174e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Enemy2",
+                    "type": "Button",
+                    "id": "6999ea7c-62ca-49db-9aa2-b0bc6bd2ed65",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Enemy3",
+                    "type": "Button",
+                    "id": "9c618c47-5c68-478f-b15b-70ab29fba504",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bcafad79-a154-4176-b0d8-d2d4ca184b86",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enemy1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fca1c646-f1d4-4258-8823-bbe5cda38bee",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enemy2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1ba095e-beb1-4dbc-b313-d8245691f431",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Enemy3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

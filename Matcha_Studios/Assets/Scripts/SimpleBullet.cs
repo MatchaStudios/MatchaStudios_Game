@@ -24,9 +24,6 @@ public class SimpleBullet : Timer
     private void Start()
     {
         coll = GetComponent<Collider>();
-        // explodeTimer = gameObject.AddComponent<Timer>();
-        //explodeTimer.timerSet = bulletLifetime;
-        //ownerName = gameObject.tag;
     }
 
     public void Init()

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2991964755033037609}
   - component: {fileID: 1774455871235473341}
   - component: {fileID: 2194694188428441144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Static Enemy Asteroid
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

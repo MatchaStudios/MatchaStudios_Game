@@ -75,9 +75,9 @@ public class HealthComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
+        if (other.TryGetComponent<SimpleBullet>(out SimpleBullet sbullet))
         {
-            if (bullet.team == tag)
+            if (sbullet.team == tag)
             {
                 // If it came from itself, do nothing.
             }
@@ -92,7 +92,7 @@ public class HealthComponent : MonoBehaviour
                         spawnedObject.transform.rotation = Quaternion.identity;
                     }
                 }
-                TakeDamage(bullet.damage);
+                TakeDamage(sbullet.damage);
             }
         }
         if (other.TryGetComponent<Missile>(out Missile missile))
@@ -100,6 +100,13 @@ public class HealthComponent : MonoBehaviour
             if (tag == "Player")
             {
                 TakeDamage(missile.damage);
+            }
+        }
+        if (other.TryGetComponent<Bullet>(out Bullet bullet))
+        {
+            if (tag == "AI")
+            {
+                TakeDamage(bullet.damage);
             }
         }
     }

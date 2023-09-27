@@ -241,6 +241,6 @@ MonoBehaviour:
   initHealth: 5
   curHealth: 5
   maxHealth: 5
-  deathParticle: {fileID: 0}
-  hitParticle: {fileID: 0}
+  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  hitParticle: {fileID: 2955623459812423941, guid: f5507a8c6a22c404ab324980c4e8a11b, type: 3}
   GameManager: {fileID: 0}

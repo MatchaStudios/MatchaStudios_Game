@@ -10,7 +10,7 @@ public class EnergyBar : MonoBehaviour
 
     float lerpSpeed;
 
-    public float energy, maxEnergy = 100f;
+    public float energy, maxEnergy = 100;
 
     // Start is called before the first frame update
     void Start()
