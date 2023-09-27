@@ -24,9 +24,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5792198605521176788}
   - component: {fileID: 8423590054099306358}
-  - component: {fileID: 5252932197934003998}
   - component: {fileID: 3488242081084799871}
   - component: {fileID: 6750108657647357292}
+  - component: {fileID: 8749237369986465321}
   m_Layer: 7
   m_Name: Asteroid - old
   m_TagString: Asteroid
@@ -63,20 +63,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialForce: 10
   initialTorque: 10
---- !u!114 &5252932197934003998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6445184964338619370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f59f3ed2886c404687aac0e8227fccb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  destructionParticles: {fileID: 6770232330467574967, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
 --- !u!54 &3488242081084799871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -106,6 +92,28 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8749237369986465321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445184964338619370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f59f3ed2886c404687aac0e8227fccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  healthBar: {fileID: 0}
+  isAlive: 1
+  initHealth: 60
+  curHealth: 60
+  maxHealth: 60
+  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  hitParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  GameManager: {fileID: 0}
+  destructionParticles: {fileID: 6770232330467574967, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
 --- !u!1001 &6764426149734217764
 PrefabInstance:
   m_ObjectHideFlags: 0

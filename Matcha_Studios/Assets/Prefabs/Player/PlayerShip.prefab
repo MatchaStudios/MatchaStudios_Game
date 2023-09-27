@@ -11,11 +11,9 @@ GameObject:
   - component: {fileID: 58386010030827849}
   - component: {fileID: 58386010030827848}
   - component: {fileID: 58386010030827847}
-  - component: {fileID: 58386010030827846}
-  - component: {fileID: 58386010030827850}
   - component: {fileID: 58386010030827851}
   m_Layer: 3
-  m_Name: Player
+  m_Name: PlayerShip
   m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -86,35 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &58386010030827846
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58386010030827845}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.52
-  m_Center: {x: 0, y: 0.12, z: 0}
---- !u!54 &58386010030827850
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58386010030827845}
-  serializedVersion: 2
-  m_Mass: 3
-  m_Drag: 1
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &58386010030827851
 MonoBehaviour:
   m_ObjectHideFlags: 0
