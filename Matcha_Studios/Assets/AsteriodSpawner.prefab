@@ -27,7 +27,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 67.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidObjects:
-  - {fileID: 6445184964338619370, guid: fa2378de30b76d34eabe61db6a06553d, type: 3}
+  - {fileID: 7240996339916311978, guid: fd8e2373ce77f4da49f8687f3ab8e456, type: 3}
   amountAsteroidsToSpawn: 50
   minRandomSpawn: -150
   maxRandomSpawn: 150
