@@ -61,8 +61,10 @@ public class Cannon : MonoBehaviour
 
     void UpdateCannon(float dt)
     {
-        if (cannonFiring && cannonFiringTimer == 0)
+        if (cannonFiring && cannonFiringTimer == 0 && GetComponent<ShipEnergy>().energy>0)
         {
+            GetComponent<ShipEnergy>().ResetEnergyTimer();
+            GetComponent<ShipEnergy>().energy -= .25f * Time.deltaTime;
             cannonFiringTimer = 60f / cannonFireRate;
 
             var spread = Random.insideUnitCircle * cannonSpread;

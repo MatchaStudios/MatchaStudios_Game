@@ -10,7 +10,7 @@ public class ShipEnergy : MonoBehaviour
     float regenTimer;
     public float energyRegenSpeed = 0.5f;
     bool pauseRegen;
-    public float energy = 2f;
+    public float energy = 1f;
     public float CurrentEnergy
     {
         get { return energy; }

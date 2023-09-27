@@ -176,11 +176,11 @@ MonoBehaviour:
   healthText: {fileID: 0}
   healthBar: {fileID: 0}
   isAlive: 1
-  initHealth: 0
-  curHealth: 0
-  maxHealth: 0
-  deathParticle: {fileID: 0}
-  hitParticle: {fileID: 0}
+  initHealth: 150
+  curHealth: 150
+  maxHealth: 150
+  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  hitParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
   GameManager: {fileID: 0}
   destructionParticles: {fileID: 6770232330467574967, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
 --- !u!135 &3879736326851273368
