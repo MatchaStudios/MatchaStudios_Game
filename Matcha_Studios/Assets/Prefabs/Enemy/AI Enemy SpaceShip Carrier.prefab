@@ -177,7 +177,7 @@ MonoBehaviour:
   isAlive: 1
   initHealth: 0
   curHealth: 0
-  maxHealth: 12
+  maxHealth: 1000
   deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
   hitParticle: {fileID: 0}
   GameManager: {fileID: 0}
