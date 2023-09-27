@@ -20,9 +20,10 @@ public class TargetObject : MonoBehaviour
         ui.AddTargetIndicator(this.gameObject);
 
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
+        Debug.Log("Target " + id + " Removed");
         ui.RemoveTargetIndicator(this.gameObject, this.id);
-        //self.DeleteSelf();
+        self.DeleteSelf();
     }
 }

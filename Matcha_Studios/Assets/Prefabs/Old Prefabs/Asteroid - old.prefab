@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 5792198605521176788}
   - component: {fileID: 8423590054099306358}
   - component: {fileID: 3488242081084799871}
-  - component: {fileID: 6750108657647357292}
   - component: {fileID: 8749237369986465321}
+  - component: {fileID: 4299992597740902618}
   m_Layer: 7
   m_Name: Asteroid - old
   m_TagString: Asteroid
@@ -79,19 +79,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &6750108657647357292
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6445184964338619370}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 7
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8749237369986465321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,13 +94,27 @@ MonoBehaviour:
   healthText: {fileID: 0}
   healthBar: {fileID: 0}
   isAlive: 1
-  initHealth: 60
-  curHealth: 60
-  maxHealth: 60
+  initHealth: 200
+  curHealth: 200
+  maxHealth: 200
   deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
   hitParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
   GameManager: {fileID: 0}
   destructionParticles: {fileID: 6770232330467574967, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+--- !u!136 &4299992597740902618
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445184964338619370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.2282875
+  m_Height: 16
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: -0.41427112}
 --- !u!1001 &6764426149734217764
 PrefabInstance:
   m_ObjectHideFlags: 0

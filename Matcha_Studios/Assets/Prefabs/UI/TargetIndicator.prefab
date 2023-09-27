@@ -92,7 +92,7 @@ MonoBehaviour:
   id: 0
   TargetIndicatorImage: {fileID: 4086782065176607744}
   OffScreenTargetIndicator: {fileID: 8418570738906738920}
-  OutOfSightOffset: 20
+  OutOfSightOffset: -4.49
 --- !u!1 &8002679851567309430
 GameObject:
   m_ObjectHideFlags: 0

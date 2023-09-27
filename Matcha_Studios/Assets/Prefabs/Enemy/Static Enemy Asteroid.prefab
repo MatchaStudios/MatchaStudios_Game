@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2991964755033037609}
   - component: {fileID: 1774455871235473341}
   - component: {fileID: 2194694188428441144}
+  - component: {fileID: 8815483426584621377}
   m_Layer: 6
   m_Name: Static Enemy Asteroid
   m_TagString: AI
@@ -103,3 +104,17 @@ MonoBehaviour:
   deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
   hitParticle: {fileID: 0}
   GameManager: {fileID: 0}
+--- !u!114 &8815483426584621377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215658093235908952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679db692380196c4789f4e00693bb508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  self: {fileID: 0}
