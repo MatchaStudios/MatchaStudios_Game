@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    float regenTimer;
+    float shieldEnergy = 1f;
     [SerializeField]
     private Image shieldBar;
     [SerializeField]
     private Image shieldVignette;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private Text shieldText;
 
     private void OnEnable()
     {
@@ -25,15 +29,26 @@ public class HUDController : MonoBehaviour
 
     private void FlashVignette()
     {
-        shieldVignette.gameObject.SetActive(true);
-        WaitHelper.Wait(1, () =>
+        if (shieldBar.fillAmount > 0)
         {
-            if (shieldVignette != null) shieldVignette.gameObject.SetActive(false);
-        });
+            shieldVignette.gameObject.SetActive(true);
+            WaitHelper.Wait(1, () =>
+            {
+                if (shieldVignette != null) shieldVignette.gameObject.SetActive(false);
+            });
+        }
     }
 
-    private void UpdateShieldBar () {
-        --shieldBar.fillAmount;
+    private void UpdateShieldBar()
+    {
+        ResetEnergyTimer();
+        if (shieldBar.fillAmount > 0)
+        {
+            shieldBar.fillAmount -= .10f;
+            int _foo = int.Parse(shieldText.text.TrimEnd('%'));
+            _foo -= 10;
+            shieldText.text = _foo.ToString() + "%";
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -44,6 +59,21 @@ public class HUDController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        regenTimer -= Time.deltaTime;
+        if (regenTimer <= 0f)
+        {
+            shieldBar.fillAmount += .2f * Time.deltaTime;
+            shieldBar.fillAmount = Mathf.Clamp(shieldBar.fillAmount, 0, 1f);
+            int _foo = int.Parse(shieldText.text.TrimEnd('%'));
+            //_foo += 10;
+            _foo= (int)Mathf.Lerp (_foo, 100, 0.1f);
+            _foo = Mathf.Clamp(_foo, 0, 100);
+            shieldText.text = _foo.ToString() + "%";
+        }
+        //Debug.Log("Energy at " + energy.ToString());
+    }
+    public void ResetEnergyTimer()
+    {
+        regenTimer = 1.5f;
     }
 }

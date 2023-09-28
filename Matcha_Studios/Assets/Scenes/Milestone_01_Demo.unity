@@ -7340,6 +7340,7 @@ MonoBehaviour:
   shieldBar: {fileID: 320471754}
   shieldVignette: {fileID: 1240156877}
   player: {fileID: 819567556}
+  shieldText: {fileID: 1233733230}
 --- !u!1001 &1887628371
 PrefabInstance:
   m_ObjectHideFlags: 0
