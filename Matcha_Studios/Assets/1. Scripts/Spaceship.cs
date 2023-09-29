@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,6 +31,8 @@ public class Spaceship : MonoBehaviour
     private float boostRechargeRate = 0.5f;
     [SerializeField]
     private float boostMultiplier = 5f;
+    [SerializeField]
+    private List<ParticleSystem> boostParticles;
     public bool boosting = false;
     public float currentBoostAmount;
 
@@ -63,7 +66,7 @@ public class Spaceship : MonoBehaviour
     {
         if (boosting && GetComponent<ShipEnergy>().energy > 0f)
         {
-            GetComponent<ShipEnergy>().energy -= boostDeprecationRate*Time.deltaTime;
+            GetComponent<ShipEnergy>().energy -= boostDeprecationRate * Time.deltaTime;
         }
     }
     void FixedUpdate()
@@ -75,24 +78,37 @@ public class Spaceship : MonoBehaviour
     void HandleBoosting()
     {
 
-            if (boosting && GetComponent<ShipEnergy>().energy > 0f)
+        if (boosting && GetComponent<ShipEnergy>().energy > 0f)
+        {
+            foreach (ParticleSystem z in boostParticles)
             {
-                GetComponent<ShipEnergy>().ResetEnergyTimer();
+                z.Play();
+            }
+            GetComponent<ShipEnergy>().ResetEnergyTimer();
 
-                if (GetComponent<ShipEnergy>().energy <= 0f)
+            if (GetComponent<ShipEnergy>().energy <= 0.1f)
+            {
+                Debug.Log("STOPPED BOOSTING");
+                foreach (ParticleSystem z in boostParticles)
                 {
-                    boosting = false;
+                    z.Stop();
                 }
+                boosting = false;
             }
-            else
+        }
+        else
+        {
+            if (!boosting)
             {
-
-                //if (currentBoostAmount < maxBoostAmount)
-                //{
-                //    currentBoostAmount += boostRechargeRate;
-                //}
+                if(boostParticles.First<ParticleSystem>().isPlaying)
+                foreach (ParticleSystem z in boostParticles)
+                {
+                    z.Stop();
+                }
+                boosting = false;
             }
-        
+        }
+
     }
 
     void HandleMovement()

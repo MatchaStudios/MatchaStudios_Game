@@ -21,7 +21,7 @@ public class TargetIndicator : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
     }
-    private void Start()
+    private void OnEnable()
     {
         Debug.Log("Target " + id + " Initalized");
     }

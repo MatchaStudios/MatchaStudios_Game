@@ -75,6 +75,7 @@ public class Cannon : MonoBehaviour
             var bulletGO = Instantiate(bulletPrefab, cannonSpawnPoint.position, cannonSpawnPoint.rotation * Quaternion.Euler(spread.x, spread.y, 0));
             var bullet = bulletGO.GetComponent<Bullet>();
             bullet.Fire();
+            SoundManager.Instance.PlaySFX("Canon");
         }
     }
 

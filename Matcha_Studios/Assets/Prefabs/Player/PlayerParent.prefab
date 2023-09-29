@@ -155,6 +155,9 @@ MonoBehaviour:
   boostDeprecationRate: 0.1
   boostRechargeRate: 0.15
   boostMultiplier: 10
+  boostParticles:
+  - {fileID: 542692212267328735}
+  - {fileID: 8423412074909236078}
   boosting: 0
   currentBoostAmount: 0
   thrustGlideReduction: 0.329
@@ -680,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3690485008346208773
 Transform:
   m_ObjectHideFlags: 0
@@ -689,7 +692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690485008346208770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.6, z: 0.22}
+  m_LocalPosition: {x: 0, y: -0.28, z: -0.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3800340937188163554}
@@ -1244,8 +1247,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4502424928880439855, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554676153285602718, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+--- !u!198 &8423412074909236078 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5554676153285602718, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+  m_PrefabInstance: {fileID: 4175914578491250416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &542692212267328735 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4502424928880439855, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}
+  m_PrefabInstance: {fileID: 4175914578491250416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4124375779559997369 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 58386010030827849, guid: 2f4b009aa50d04448983788923c1e1d0, type: 3}

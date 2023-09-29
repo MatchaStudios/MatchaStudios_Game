@@ -41,11 +41,11 @@ public class UIController : MonoBehaviour
         target.GetComponent<TargetObject>().self = indicator;
         targetIndicators.Add(indicator);
     }
-    public void RemoveTargetIndicator(GameObject target, int id)
+    public void RemoveTargetIndicator(int id)
     {
         if(targetIndicators.Find(x => x.id == id)){
-        Destroy(targetIndicators.Find(x => x.id == id).gameObject);
-        targetIndicators.RemoveAll(x => x.id == id);
+    //    Destroy(targetIndicators.Find(x => x.id == id).gameObject);
+   //     targetIndicators.RemoveAll(x => x.id == id);
         }
     }
 

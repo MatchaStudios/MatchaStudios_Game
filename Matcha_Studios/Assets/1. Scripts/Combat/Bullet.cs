@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
     }
     void ApplyDamage(HealthComponent healthComponent)
     {
-
+            SoundManager.Instance.PlaySFX("Impact Hit");
             healthComponent.TakeDamage(damage);
             Debug.Log("doing damage from cannon");
     }

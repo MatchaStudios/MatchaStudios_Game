@@ -104,7 +104,7 @@ public class SpaceshipShooting : MonoBehaviour
     void FireLaser()
     {
         RaycastHit hitInfo;
-
+        SoundManager.Instance.PlaySFX("Laser");
         if (TargetInfo.IsTargetInRange(hardpointMiddle.transform.position, cam.transform.forward, out hitInfo, hardpointRange, shootableMask))
         {
             Debug.Log("In range");

@@ -103,6 +103,7 @@ public class Abilities : MonoBehaviour
     /// </summary>
     private void ShowAbilityVFx()
     {
+        SoundManager.Instance.PlaySFX("Heal");
         AbilityVFX.SetActive(true);
         AbilityVFX.SetActive(true);
         WaitHelper.Wait(3, () =>

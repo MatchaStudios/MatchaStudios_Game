@@ -26,15 +26,15 @@ public class ShieldAnimator : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        /*
         shieldDamaged?.Invoke();
+        SoundManager.Instance.PlaySFX("Shield Get Hit");
         if(currentColor == length){
             currentColor =4;
         }
         else{
         currentColor = (currentColor+1)%length;
         }
-        */
+        
         //shieldRenderer.material.SetColor("_MainColor",Color.Lerp(shieldRenderer.material.color,colourArray[currentColor],.1f));
         shieldMesh.SetActive(true);
         WaitHelper.Wait(3, () =>
