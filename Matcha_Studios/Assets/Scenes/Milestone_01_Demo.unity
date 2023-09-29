@@ -2392,6 +2392,17 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   - {r: 1, g: 0, b: 0, a: 1}
   shieldMesh: {fileID: 1686881953}
+--- !u!114 &703399937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3690485007507777400, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+  m_PrefabInstance: {fileID: 2108246639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703399928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ace87bd6b184144a3d476342e46e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &737547237
 GameObject:
   m_ObjectHideFlags: 0
@@ -7266,6 +7277,46 @@ PrefabInstance:
     - target: {fileID: 3690485007507777396, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: 49ecb054-0174-405e-af49-fa17bf0d6395
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: Ship Controls/UnlockCursor[/Keyboard/u]
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 703399937}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockCusor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Spaceship, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777398, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3690485007516249993, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
       propertyPath: m_Layer

@@ -43,7 +43,7 @@ public class Spaceship : MonoBehaviour
     [SerializeField, Range(0.001f, 0.999f)]
     private float leftRightGlideReduction = 0.111f;
     float glide, verticalGlide, horizontalGlide = 0f;
-
+    private bool lockCursorMode= true;
 
     Rigidbody rb;
 
@@ -202,4 +202,20 @@ public class Spaceship : MonoBehaviour
         boosting = context.performed;
     }
     #endregion
+    public void UnlockCusor(InputAction.CallbackContext context)
+    {
+        Debug.Log("U pressed!");
+        if(lockCursorMode)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            lockCursorMode=false;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            lockCursorMode=true;
+        }
+    }
 }
