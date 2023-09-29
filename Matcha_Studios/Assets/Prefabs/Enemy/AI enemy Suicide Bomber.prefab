@@ -134,7 +134,7 @@ MonoBehaviour:
   lookAtSpeed: 2
   missileAcceleration: 20
   topSpeed: 40
-  ejectSpeed: 4
+  ejectSpeed: 10
   deployTime: 2
   damage: 5
   ejectDirection: 2
