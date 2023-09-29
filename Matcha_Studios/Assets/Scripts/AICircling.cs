@@ -30,8 +30,6 @@ public class AICircling : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, player.position);
-        transform.LookAt(player);
-
         //pathfind.enabled = false;
         ////initialOffset = transform.position - player.position;
         //MakeAgentsCircleTarget();
