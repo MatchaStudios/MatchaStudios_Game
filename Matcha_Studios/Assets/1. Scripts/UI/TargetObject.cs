@@ -7,7 +7,7 @@ public class TargetObject : MonoBehaviour
     public int id = 0;
     private UIController ui;
     public  TargetIndicator self;
-    private void Awake()
+    private void Start()
     {
         ui = GetComponentInParent<UIController>();
         if (ui == null)
