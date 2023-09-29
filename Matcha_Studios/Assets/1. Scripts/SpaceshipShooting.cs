@@ -139,8 +139,8 @@ public class SpaceshipShooting : MonoBehaviour
         GetComponent<ShipEnergy>().energy -= laserHeatRate * Time.deltaTime;
         if (firing && GetComponent<ShipEnergy>().energy < GetComponent<ShipEnergy>().MaxEnergy)
         {
-            //GetComponent<ShipEnergy>().energy -= laserHeatRate * Time.deltaTime;
-            Debug.Log("Energy at " + GetComponent<ShipEnergy>().energy.ToString());
+            GetComponent<ShipEnergy>().energy -= laserHeatRate * Time.deltaTime;
+//            Debug.Log("Energy at " + GetComponent<ShipEnergy>().energy.ToString());
 
             if (currentLaserHeat >= GetComponent<ShipEnergy>().CurrentEnergy)
             {

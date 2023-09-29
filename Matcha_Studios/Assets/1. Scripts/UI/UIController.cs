@@ -44,8 +44,8 @@ public class UIController : MonoBehaviour
     public void RemoveTargetIndicator(int id)
     {
         if(targetIndicators.Find(x => x.id == id)){
-    //    Destroy(targetIndicators.Find(x => x.id == id).gameObject);
-   //     targetIndicators.RemoveAll(x => x.id == id);
+        Destroy(targetIndicators.Find(x => x.id == id).gameObject);
+        targetIndicators.RemoveAll(x => x.id == id);
         }
     }
 
