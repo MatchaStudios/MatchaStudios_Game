@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent((typeof(ShipEnergy)))]
 public class SpaceshipShooting : MonoBehaviour
 {
     [Header("=== Spaceship Settings ===")]
@@ -15,8 +16,8 @@ public class SpaceshipShooting : MonoBehaviour
     [SerializeField]
     private LayerMask shootableMask;
     [SerializeField]
-    private float hardpointRange = 100f;
-
+    private float hardpointRange = 10000f;
+    [SerializeField] private ParticleSystem laserHitParticles;
     private bool targetInRange = false;
 
     [Header("=== Laser Settings ===")]
@@ -26,7 +27,7 @@ public class SpaceshipShooting : MonoBehaviour
     [SerializeField]
     private float miningPower = 1f;
     [SerializeField]
-    private float laserHeatThreshold = 2f;
+    private float laserHeatThreshold = 0f;
     [SerializeField]
     private float laserHeatRate = 0.25f;
     [SerializeField]
@@ -59,7 +60,14 @@ public class SpaceshipShooting : MonoBehaviour
         cam = Camera.main;
         spaceship = GetComponent<Spaceship>();
     }
-
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    private void Start()
+    {
+       
+    }
     private void Update()
     {
         HandleLaserFiring();
@@ -105,7 +113,7 @@ public class SpaceshipShooting : MonoBehaviour
                 Debug.Log("can damage");
                 ApplyDamage(hitInfo.collider.GetComponentInParent<HealthComponent>());
             }
-            //Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
+            Instantiate(laserHitParticles, hitInfo.point, Quaternion.LookRotation(hitInfo.normal));
 
             foreach (var laser in lasers)
             {
@@ -122,17 +130,19 @@ public class SpaceshipShooting : MonoBehaviour
                 laser.SetPosition(1, new Vector3(0, 0, hardpointRange));
             }
         }
-
+        GetComponent<ShipEnergy>().ResetEnergyTimer();
         HeatLaser();
     }
 
     void HeatLaser()
     {
-        if (firing && currentLaserHeat < laserHeatThreshold)
+        GetComponent<ShipEnergy>().energy -= laserHeatRate * Time.deltaTime;
+        if (firing && GetComponent<ShipEnergy>().energy < GetComponent<ShipEnergy>().MaxEnergy)
         {
-            currentLaserHeat += laserHeatRate * Time.deltaTime;
+            //GetComponent<ShipEnergy>().energy -= laserHeatRate * Time.deltaTime;
+            Debug.Log("Energy at " + GetComponent<ShipEnergy>().energy.ToString());
 
-            if (currentLaserHeat >= laserHeatThreshold)
+            if (currentLaserHeat >= GetComponent<ShipEnergy>().CurrentEnergy)
             {
                 overHeated = true;
                 firing = false;
@@ -145,7 +155,7 @@ public class SpaceshipShooting : MonoBehaviour
     {
         if (overHeated)
         {
-            if (currentLaserHeat / laserHeatThreshold <= 0.5f)
+            if (currentLaserHeat / GetComponent<ShipEnergy>().CurrentEnergy <= 0.5f)
             {
                 overHeated = false;
             }

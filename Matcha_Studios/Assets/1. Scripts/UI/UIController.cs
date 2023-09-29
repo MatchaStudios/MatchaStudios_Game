@@ -12,8 +12,7 @@ public class UIController : MonoBehaviour
     public Camera MainCamera;
 
     public GameObject TargetIndicatorPrefab;
-
-    public int indicatorCount = 0;
+        public int indicatorCount = 0;
 
     // Start is called before the first frame update
     void Start()

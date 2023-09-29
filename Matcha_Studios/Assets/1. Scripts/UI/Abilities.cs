@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class Abilities : MonoBehaviour
 {
+    /// <summary>
+    /// DELETE LATER
+    /// </summary>
+    [SerializeField]
+    private GameObject AbilityVFX;
+    //
     [Header("Ability 1")]
     public Image abilityImage1;
     //public Text abilityText1;
@@ -85,22 +91,35 @@ public class Abilities : MonoBehaviour
             Ability5Input();
         }
 
-        AbilityCooldown(ref currentAbility1Cooldown, ability1Cooldown, ref isAbility1Cooldown, abilityImage1,AbilityType.Ability1);
+        AbilityCooldown(ref currentAbility1Cooldown, ability1Cooldown, ref isAbility1Cooldown, abilityImage1, AbilityType.Ability1);
         AbilityCooldown(ref currentAbility2Cooldown, ability2Cooldown, ref isAbility2Cooldown, abilityImage2, AbilityType.Ability2);
         AbilityCooldown(ref currentAbility3Cooldown, ability3Cooldown, ref isAbility3Cooldown, abilityImage3, AbilityType.Ability3);
         AbilityCooldown(ref currentAbility4Cooldown, ability4Cooldown, ref isAbility4Cooldown, abilityImage4, AbilityType.Ability4);
         AbilityCooldown(ref currentAbility5Cooldown, ability5Cooldown, ref isAbility5Cooldown, abilityImage5, AbilityType.Ability5);
 
     }
+    /// <summary>
+    /// DELETE LATER
+    /// </summary>
+    private void ShowAbilityVFx()
+    {
+        AbilityVFX.SetActive(true);
+        AbilityVFX.SetActive(true);
+        WaitHelper.Wait(3, () =>
+        {
+            if (AbilityVFX != null) AbilityVFX.SetActive(false);
+        });
+    }
 
+    //
     private void Ability1Input()
     {
-        if(Input.GetKeyDown(ability1Key) && !isAbility1Cooldown)
+        if (Input.GetKeyDown(ability1Key) && !isAbility1Cooldown)
         {
             isAbility1Cooldown = true;
             currentAbility1Cooldown = ability1Cooldown;
             activeAbility = AbilityType.Ability1;
-
+            ShowAbilityVFx();
         }
     }
 
@@ -111,7 +130,7 @@ public class Abilities : MonoBehaviour
             isAbility2Cooldown = true;
             currentAbility2Cooldown = ability2Cooldown;
             activeAbility = AbilityType.Ability2;
-
+            ShowAbilityVFx();
         }
     }
 
@@ -122,7 +141,7 @@ public class Abilities : MonoBehaviour
             isAbility3Cooldown = true;
             currentAbility3Cooldown = ability3Cooldown;
             activeAbility = AbilityType.Ability3;
-
+            ShowAbilityVFx();
         }
     }
 
@@ -133,7 +152,7 @@ public class Abilities : MonoBehaviour
             isAbility4Cooldown = true;
             currentAbility4Cooldown = ability4Cooldown;
             activeAbility = AbilityType.Ability4;
-
+            ShowAbilityVFx();
         }
     }
 
@@ -145,6 +164,7 @@ public class Abilities : MonoBehaviour
             isAbility5Cooldown = true;
             currentAbility5Cooldown = ability5Cooldown;
             activeAbility = AbilityType.Ability5;
+            ShowAbilityVFx();
         }
     }
 
@@ -154,14 +174,14 @@ public class Abilities : MonoBehaviour
         {
             currentCooldown -= Time.deltaTime;
 
-            if(currentCooldown <= 0f)
+            if (currentCooldown <= 0f)
             {
                 isCooldown = false;
                 currentCooldown = 0f;
 
-                if(skillImage != null)
+                if (skillImage != null)
                 {
-                    skillImage.fillAmount = 0f; 
+                    skillImage.fillAmount = 0f;
                 }
                 if (activeAbility == abilityType)
                 {
@@ -170,7 +190,7 @@ public class Abilities : MonoBehaviour
             }
             else
             {
-                if(skillImage != null)
+                if (skillImage != null)
                 {
                     skillImage.fillAmount = currentCooldown / maxCooldown;
                 }

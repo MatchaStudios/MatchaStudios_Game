@@ -21,10 +21,17 @@ public class TargetIndicator : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
     }
-
     private void Start()
     {
         Debug.Log("Target " + id + " Initalized");
+    }
+
+    private void OnDisable() {
+        Debug.Log("Target " + id + " Removed");
+    }
+    public void DeleteSelf()
+    {
+        Destroy(this);
     }
 
     public void InitialiseTargetIndicator(GameObject target, Camera mainCamera, Canvas canvas, int id)
@@ -119,11 +126,11 @@ public class TargetIndicator : MonoBehaviour
         }
 
         //Change the indicator Position back to the actual rectTransform coordinate system and return indicatorPosition
-        // indicatorPosition += canvasCenter;
+        //indicatorPosition += canvasCenter;
         //return indicatorPosition;
         Vector3 vec = indicatorPosition.normalized;
         //Multiply the vector and your desired radius (I'm using the screen height)
-        vec *= canvasCenter.y - 300;
+        vec *= canvasCenter.y - OutOfSightOffset;
         //By default is a perfect circle, so I multiply the X axis to make it adapt to the screen (16/9)
         vec.x *= 1.7f;
         vec += canvasCenter;
@@ -172,10 +179,7 @@ public class TargetIndicator : MonoBehaviour
 
         //return the angle as a rotation Vector
         return new Vector3(0f, 0f, angle);
-    }
 
-    public void DeleteSelf()
-    {
-        Destroy(this);
+
     }
 }

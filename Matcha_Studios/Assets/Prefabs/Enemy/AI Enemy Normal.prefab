@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5838684787630860425}
   - component: {fileID: 5991645611476542929}
   - component: {fileID: 6862005224686860213}
+  - component: {fileID: 3613627857613977811}
   m_Layer: 6
   m_Name: AI Enemy Normal
   m_TagString: AI
@@ -197,7 +198,7 @@ MonoBehaviour:
   initHealth: 10
   curHealth: 10
   maxHealth: 500
-  deathParticle: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+  deathParticle: {fileID: 794765740704506693, guid: 177df6beda790df48b483b9b9d444994, type: 3}
   hitParticle: {fileID: 2955623459812423941, guid: f5507a8c6a22c404ab324980c4e8a11b, type: 3}
   GameManager: {fileID: 0}
 --- !u!114 &6862005224686860213
@@ -214,6 +215,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   forceBuzz: 0.1
+--- !u!114 &3613627857613977811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6850854620000661907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679db692380196c4789f4e00693bb508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  self: {fileID: 0}
 --- !u!1 &7268965711875139625
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent((typeof(ShipEnergy)))]
 public class Spaceship : MonoBehaviour
 {
     [Header("=== Ship Movement Settings ===")]
@@ -24,7 +25,7 @@ public class Spaceship : MonoBehaviour
     [SerializeField]
     private float maxBoostAmount = 2f;
     [SerializeField]
-    private float boostDeprecationRate = 0.25f;
+    private float boostDeprecationRate = 0.5f;
     [SerializeField]
     private float boostRechargeRate = 0.5f;
     [SerializeField]
@@ -55,7 +56,16 @@ public class Spaceship : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentBoostAmount = maxBoostAmount;
     }
-
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (boosting && GetComponent<ShipEnergy>().energy > 0f)
+        {
+            GetComponent<ShipEnergy>().energy -= boostDeprecationRate*Time.deltaTime;
+        }
+    }
     void FixedUpdate()
     {
         HandleBoosting();
@@ -64,21 +74,25 @@ public class Spaceship : MonoBehaviour
 
     void HandleBoosting()
     {
-        if (boosting && currentBoostAmount > 0f)
-        {
-            currentBoostAmount -= boostDeprecationRate;
-            if (currentBoostAmount <= 0f)
+
+            if (boosting && GetComponent<ShipEnergy>().energy > 0f)
             {
-                boosting = false;
+                GetComponent<ShipEnergy>().ResetEnergyTimer();
+
+                if (GetComponent<ShipEnergy>().energy <= 0f)
+                {
+                    boosting = false;
+                }
             }
-        }
-        else
-        {
-            if (currentBoostAmount < maxBoostAmount)
+            else
             {
-                currentBoostAmount += boostRechargeRate;
+
+                //if (currentBoostAmount < maxBoostAmount)
+                //{
+                //    currentBoostAmount += boostRechargeRate;
+                //}
             }
-        }
+        
     }
 
     void HandleMovement()
