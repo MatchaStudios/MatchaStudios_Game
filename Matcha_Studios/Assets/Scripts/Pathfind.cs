@@ -58,8 +58,8 @@ public class Pathfind : MonoBehaviour
         Vector3 forward = transform.TransformDirection(Vector3.forward) * distance;
 
         AvoidCollision();
-        
-        Orientation();
+
+        //Orientation();
 
         switch (state)
         {
@@ -67,6 +67,7 @@ public class Pathfind : MonoBehaviour
                 // transform.LookAt(player);
                 Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position, transform.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookAtSpeed * Time.deltaTime);
+
                 if (distance > stoppingDistance)
                 {
                     SmoothMoveTowards(player.position, moveSpeed);
@@ -135,7 +136,7 @@ public class Pathfind : MonoBehaviour
 
     void Orientation()
     {
-         // Get the direction to the player
+        // Get the direction to the player
         Vector3 directionToPlayer = player.position - transform.position;
 
         // Ensure the enemy rotates only around its forward axis

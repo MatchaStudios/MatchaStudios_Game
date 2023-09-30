@@ -4,25 +4,53 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    // bullet
+    [Header("=== Weapon Properties ===")]
     public GameObject bulletType;
     public float fireRate = 300.0f; // Rounds per minute
     public float bulletSpeed = 10f;
     public bool inheritVelocity = false;
     public float weaponDamage = 0f;
 
-    public float shootRange = 100f;
+    // Range at which enemy starts shooting
+    // Determines Raycast length in code
+
+    [Header("=== Range To Shoot ===")]
+    public float minShootRange = 0f;
+    public float maxShootRange = 100f;
+
+    [SerializeField]
+    private float distanceFromTarget = 0f;
 
     private float timeSinceFired;
 
+    [Header("=== Spawn Position ===")]
     public Transform spawnPosition;
 
+    [Header("=== Object Pooling Reference ===")]
     public GameObject GameManager;
     ObjectPooling objectPooling;
 
+    [Header("=== Enemy Target Prediction ===")]
+    // Velocities of player which enemy will shoot
+    public float lowerPlayerSpeed = 1;
+    public float upperPlayerSpeed = 10;
 
+    // Leading speed
+    // public float lookAtSpeed = 0.1f;
+
+    // find the player
+    Transform player;
+    public float timeAhead = 0.5f; // Adjust as needed
+
+    // Read Only Field
+    [SerializeField]
+    private float playerSpeed = 0f;
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
         GameManager = GameObject.Find("GameManager");
         if (GameManager != null)
         {
@@ -32,32 +60,73 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        LeadShots();
         Targetting();
+
+        //Debugging Stuff
+        playerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
     }
+
 
     void Fire()
     {
+
         float interval = 1f / (fireRate / 60 /* seconds */);
-        if(Time.time > timeSinceFired)
+        if (Time.time > timeSinceFired)
         {
-            SpawnObject();  
+            SpawnObject();
             timeSinceFired = Time.time + interval;
         }
+    }
+    void LeadShots()
+    {
+        Vector3 playerPredictedPosition = player.position + (player.GetComponent<Rigidbody>().velocity * (timeAhead / bulletSpeed));
+
+        // Calculate direction to predicted position
+        Vector3 predictedDirection = playerPredictedPosition - transform.position;
+
+        // Rotate towards the predicted position
+        Quaternion targetRotation = Quaternion.LookRotation(predictedDirection, player.transform.up);
+        transform.rotation =  targetRotation;
     }
 
     void Targetting()
     {
         Vector3 rayDirection = transform.forward;
-        float rayLength = shootRange;
-        int layerMask = 1 << LayerMask.NameToLayer("Bullet"); // Create a layer mask that only includes the "Bullet" layer.
-        
+        float rayLength = maxShootRange;
+
+        float distance = (player.position - transform.position).magnitude;
+
+        //For debugging
+        distanceFromTarget = distance;
+
+        // Create a layer mask that only includes the "Bullet" layer.
+        int layerMask = 1 << LayerMask.NameToLayer("Bullet");
+
+        // If player is Stationary
         if (Physics.Raycast(transform.position, rayDirection, out RaycastHit hit, rayLength, ~layerMask))
         {
             if (hit.collider.CompareTag("Player"))
             {
+                if(minShootRange < distance && distance < maxShootRange)
+                {
+                    Fire();
+                }
+            }   
+
+        }
+        else
+        {
+            // If player is moving
+            float playerSpeed = player.GetComponent<Rigidbody>().velocity.magnitude;
+            if (lowerPlayerSpeed < playerSpeed && playerSpeed < upperPlayerSpeed)
+            {
                 Fire();
             }
         }
+
+
+        Debug.DrawRay(transform.position, rayLength * rayDirection);
     }
 
     void SpawnObject()
@@ -82,7 +151,7 @@ public class Shoot : MonoBehaviour
         }
 
         //Get Simple Bullet Script. Not every bullet has one!
-         if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
+        if (spawnedObject.TryGetComponent<SimpleBullet>(out SimpleBullet bullet))
         {
             bullet.Init();
             bullet.damage = weaponDamage;

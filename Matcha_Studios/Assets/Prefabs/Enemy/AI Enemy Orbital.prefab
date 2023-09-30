@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 8915094465428897651}
   - component: {fileID: 3313212546132981366}
   - component: {fileID: -1873184417727549652}
+  - component: {fileID: 3603634082613342396}
   m_Layer: 6
   m_Name: AI Enemy Orbital
   m_TagString: AI
@@ -165,7 +166,7 @@ MonoBehaviour:
   avoidSpeedPercentage: 0.5
   avoidSpeed: 10
   stoppingDistance: 20
-  lookAtSpeed: 1
+  lookAtSpeed: 10
   lookAtAngle: 0
   player: {fileID: 0}
   rayCount: 10
@@ -219,12 +220,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: {fileID: 5514170091429913893, guid: 08d2e3a657359db4dab35d9c675e4c98, type: 3}
   fireRate: 300
-  bulletSpeed: 10
+  bulletSpeed: 40
   inheritVelocity: 0
   weaponDamage: 0
-  shootRange: 100
+  minShootRange: 0
+  maxShootRange: 50
+  distanceFromTarget: 0
   spawnPosition: {fileID: 0}
   GameManager: {fileID: 0}
+  lowerPlayerSpeed: 1
+  upperPlayerSpeed: 45
+  timeAhead: 5
+  playerSpeed: 0
 --- !u!114 &3313212546132981366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +267,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   self: {fileID: 0}
+--- !u!114 &3603634082613342396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304042638919330411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571167fa547678e46a27f0fff9aef682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrientationSpeed: 2
