@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2d38e6fa8bad14f4cb6b1060f8c3bd39
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Milestone_01_Demo.unity
     guid: 74953bdb9f9ce4c7ab6cc362582623b2
   - enabled: 0
     path: Assets/Scenes/Nicholas_Demo.unity
     guid: 08eab956d9a9ae5478f79a7d1655a8bf
+  - enabled: 1
+    path: Assets/Scenes/MatchaStudios_HighTeas.unity
+    guid: bf2304cc314444b1eb3c3e6aca53854b
   m_configObjects: {}
