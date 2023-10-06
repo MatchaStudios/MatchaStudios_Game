@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
 
             if (hit.collider.GetComponentInParent<HealthComponent>())
             {
-
+                GetComponentInChildren<ParticleSystem>().Play();
                 ApplyDamage(hit.collider.GetComponentInParent<HealthComponent>());
             }
 
@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
     }
     void ApplyDamage(HealthComponent healthComponent)
     {
-
+            SoundManager.Instance.PlaySFX("Impact Hit");
             healthComponent.TakeDamage(damage);
             Debug.Log("doing damage from cannon");
     }

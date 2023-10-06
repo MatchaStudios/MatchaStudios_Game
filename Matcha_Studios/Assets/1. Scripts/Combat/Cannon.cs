@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class Cannon : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Cannon : MonoBehaviour
     List<float> missileReloadTimers;
     float missileDebounceTimer;
     Vector3 missileLockDirection;
+    public static Action energyUsed;
 
     bool cannonFiring;
     float cannonDebounceTimer;
@@ -61,15 +63,19 @@ public class Cannon : MonoBehaviour
 
     void UpdateCannon(float dt)
     {
-        if (cannonFiring && cannonFiringTimer == 0)
+        if (cannonFiring && cannonFiringTimer == 0 && GetComponent<ShipEnergy>().energy>0)
         {
+            GetComponent<ShipEnergy>().ResetEnergyTimer();
+            GetComponent<ShipEnergy>().energy -= .25f * Time.deltaTime;
+            energyUsed?.Invoke();
             cannonFiringTimer = 60f / cannonFireRate;
 
-            var spread = Random.insideUnitCircle * cannonSpread;
+            var spread = UnityEngine.Random.insideUnitCircle * cannonSpread;
 
             var bulletGO = Instantiate(bulletPrefab, cannonSpawnPoint.position, cannonSpawnPoint.rotation * Quaternion.Euler(spread.x, spread.y, 0));
             var bullet = bulletGO.GetComponent<Bullet>();
             bullet.Fire();
+            SoundManager.Instance.PlaySFX("Canon");
         }
     }
 

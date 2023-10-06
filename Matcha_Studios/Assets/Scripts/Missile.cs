@@ -95,7 +95,7 @@ public class Missile : Timer
         }
 
         // Check if missile has reached player (you can implement a proximity check here)
-        if (Vector3.Distance(transform.position, player.position) <= 3.0f)
+        if (Vector3.Distance(transform.position, player.position) <= 6.0f)
         {
             Explode();
         }

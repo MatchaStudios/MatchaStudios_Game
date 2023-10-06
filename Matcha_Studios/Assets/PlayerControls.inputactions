@@ -68,6 +68,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "UnlockCursor",
+                    "type": "Button",
+                    "id": "49ecb054-0174-405e-af49-fa17bf0d6395",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -398,6 +406,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "FireCannon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "589dd23b-11d8-46b5-bd5e-e30d96c0a961",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UnlockCursor",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

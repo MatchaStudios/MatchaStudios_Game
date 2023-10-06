@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent (typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent((typeof(ShipEnergy)))]
 public class Spaceship : MonoBehaviour
 {
     [Header("=== Ship Movement Settings ===")]
@@ -24,11 +26,13 @@ public class Spaceship : MonoBehaviour
     [SerializeField]
     private float maxBoostAmount = 2f;
     [SerializeField]
-    private float boostDeprecationRate = 0.25f;
+    private float boostDeprecationRate = 0.5f;
     [SerializeField]
     private float boostRechargeRate = 0.5f;
     [SerializeField]
     private float boostMultiplier = 5f;
+    [SerializeField]
+    private List<ParticleSystem> boostParticles;
     public bool boosting = false;
     public float currentBoostAmount;
 
@@ -39,7 +43,7 @@ public class Spaceship : MonoBehaviour
     [SerializeField, Range(0.001f, 0.999f)]
     private float leftRightGlideReduction = 0.111f;
     float glide, verticalGlide, horizontalGlide = 0f;
-
+    private bool lockCursorMode= true;
 
     Rigidbody rb;
 
@@ -55,7 +59,16 @@ public class Spaceship : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         currentBoostAmount = maxBoostAmount;
     }
-
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        if (boosting && GetComponent<ShipEnergy>().energy > 0f)
+        {
+            GetComponent<ShipEnergy>().energy -= boostDeprecationRate * Time.deltaTime;
+        }
+    }
     void FixedUpdate()
     {
         HandleBoosting();
@@ -64,21 +77,38 @@ public class Spaceship : MonoBehaviour
 
     void HandleBoosting()
     {
-        if (boosting && currentBoostAmount > 0f)
+
+        if (boosting && GetComponent<ShipEnergy>().energy > 0f)
         {
-            currentBoostAmount -= boostDeprecationRate;
-            if (currentBoostAmount <= 0f)
+            foreach (ParticleSystem z in boostParticles)
             {
+                z.Play();
+            }
+            GetComponent<ShipEnergy>().ResetEnergyTimer();
+
+            if (GetComponent<ShipEnergy>().energy <= 0.1f)
+            {
+                Debug.Log("STOPPED BOOSTING");
+                foreach (ParticleSystem z in boostParticles)
+                {
+                    z.Stop();
+                }
                 boosting = false;
             }
         }
         else
         {
-            if (currentBoostAmount < maxBoostAmount)
+            if (!boosting)
             {
-                currentBoostAmount += boostRechargeRate;
+                if(boostParticles.First<ParticleSystem>().isPlaying)
+                foreach (ParticleSystem z in boostParticles)
+                {
+                    z.Stop();
+                }
+                boosting = false;
             }
         }
+
     }
 
     void HandleMovement()
@@ -172,4 +202,20 @@ public class Spaceship : MonoBehaviour
         boosting = context.performed;
     }
     #endregion
+    public void UnlockCusor(InputAction.CallbackContext context)
+    {
+        Debug.Log("U pressed!");
+        if(lockCursorMode)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            lockCursorMode=false;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            lockCursorMode=true;
+        }
+    }
 }

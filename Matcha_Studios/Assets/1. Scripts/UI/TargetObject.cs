@@ -7,7 +7,7 @@ public class TargetObject : MonoBehaviour
     public int id = 0;
     private UIController ui;
     public  TargetIndicator self;
-    private void Awake()
+    private void Start()
     {
         ui = GetComponentInParent<UIController>();
         if (ui == null)
@@ -22,8 +22,8 @@ public class TargetObject : MonoBehaviour
     }
     private void OnDisable()
     {
-        Debug.Log("Target " + id + " Removed");
-        ui.RemoveTargetIndicator(this.gameObject, this.id);
+        Debug.Log("Target " + gameObject.name + " Removed");
+        ui.RemoveTargetIndicator(this.id);
         self.DeleteSelf();
     }
 }

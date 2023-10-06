@@ -12,6 +12,7 @@ public class Pathfind : MonoBehaviour
     public float avoidSpeed = 10f;
     public float stoppingDistance = 2.0f;
     public float lookAtSpeed = 1.0f;
+    public float lookAtAngle;
     public Transform player;
 
     // Rays
@@ -38,6 +39,9 @@ public class Pathfind : MonoBehaviour
         // Find the player using a tag.
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody>();
+
+        // match with player's rotation.
+        transform.rotation = player.transform.rotation;
     }
 
     void Update()
@@ -49,17 +53,21 @@ public class Pathfind : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, player.position);
+
+        //to use for drawing raycast.
         Vector3 forward = transform.TransformDirection(Vector3.forward) * distance;
 
         AvoidCollision();
 
+        //Orientation();
+
         switch (state)
         {
             case State.TARGET:
-                // TODO: Do this smoothly
                 // transform.LookAt(player);
-                Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
+                Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position, transform.up);
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, lookAtSpeed * Time.deltaTime);
+
                 if (distance > stoppingDistance)
                 {
                     SmoothMoveTowards(player.position, moveSpeed);
@@ -87,21 +95,6 @@ public class Pathfind : MonoBehaviour
 
     void AvoidCollision()
     {
-        // RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, 5.0f))
-        //{
-        //    if (hit.collider.CompareTag("Environment"))
-        //    {
-        //        Vector3 ObstacleNormal = hit.normal;
-        //        Vector3 direction = (hit.point - transform.position).normalized;
-        //        Vector3 dirToGo = Vector3.Cross(ObstacleNormal, direction);
-
-        //        transform.Translate(-avoidSpeed * dirToGo * Time.deltaTime);
-        //        Debug.DrawRay(hit.point, 10 * ObstacleNormal, Color.yellow);
-        //        Debug.DrawRay(transform.position, 10 * dirToGo, Color.red);
-        //    }
-        //}
-        // Vector3 dirToGo = player.transform.position - transform.position;
 
         for (int i = 0; i < rayCount; i++)
         {
@@ -139,8 +132,19 @@ public class Pathfind : MonoBehaviour
             }
         }
 
-        // transform.Translate( dirToGo.normalized * Time.deltaTime);
+    }
 
+    void Orientation()
+    {
+        // Get the direction to the player
+        Vector3 directionToPlayer = player.position - transform.position;
+
+        // Ensure the enemy rotates only around its forward axis
+        Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer, player.transform.up);
+
+        // Smoothly rotate the enemy towards the player
+        float rotationSpeed = 2.0f; // Adjust as needed
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
 }

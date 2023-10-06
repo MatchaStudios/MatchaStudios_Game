@@ -22,7 +22,7 @@ public class ObjectiveObject : MonoBehaviour
     }
     private void OnDisable()
     {
-        Debug.Log("Target " + id + " Removed");
+        Debug.Log("Objective " + gameObject.name + " Removed");
         ui.RemoveTargetIndicator(this.gameObject, this.id);
         self.DeleteSelf();
     }
