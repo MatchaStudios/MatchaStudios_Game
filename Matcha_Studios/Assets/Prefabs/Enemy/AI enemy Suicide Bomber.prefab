@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1709786719033001865}
   - component: {fileID: 3902489663005817750}
   - component: {fileID: 5690782495990765647}
-  - component: {fileID: -8681043865236276131}
   m_Layer: 6
   m_Name: AI enemy Suicide Bomber
   m_TagString: AI
@@ -160,20 +159,6 @@ MonoBehaviour:
   deathParticle: {fileID: 794765740704506693, guid: 177df6beda790df48b483b9b9d444994, type: 3}
   hitParticle: {fileID: 0}
   GameManager: {fileID: 0}
---- !u!114 &-8681043865236276131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4140622200622995564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 679db692380196c4789f4e00693bb508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 0
-  self: {fileID: 0}
 --- !u!1 &5850564356463883450
 GameObject:
   m_ObjectHideFlags: 0

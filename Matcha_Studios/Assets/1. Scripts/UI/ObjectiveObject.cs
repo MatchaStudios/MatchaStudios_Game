@@ -7,7 +7,7 @@ public class ObjectiveObject : MonoBehaviour
     public int id = 0;
     private ObjectiveUIController ui;
     public  ObjectiveIndicator self;
-    private void Awake()
+    private void OnEnable()
     {
         ui = GetComponentInParent<ObjectiveUIController>();
         if (ui == null)

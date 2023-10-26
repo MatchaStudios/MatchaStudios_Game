@@ -17,7 +17,6 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -34,7 +33,8 @@ public class UIController : MonoBehaviour
 
     public void AddTargetIndicator(GameObject target)
     {
-        indicatorCount = ++indicatorCount;
+        indicatorCount = ++indicatorCount;  
+        Debug.Log("ID is" + indicatorCount);
         target.GetComponent<TargetObject>().id = indicatorCount;
         TargetIndicator indicator = Instantiate(TargetIndicatorPrefab, canvas.transform).GetComponent<TargetIndicator>();
         indicator.InitialiseTargetIndicator(target, MainCamera, canvas, indicatorCount);
@@ -43,6 +43,7 @@ public class UIController : MonoBehaviour
     }
     public void RemoveTargetIndicator(int id)
     {
+        Debug.Log("ID is " + id.ToString());
         if(targetIndicators.Find(x => x.id == id)){
         Destroy(targetIndicators.Find(x => x.id == id).gameObject);
         targetIndicators.RemoveAll(x => x.id == id);
