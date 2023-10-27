@@ -6,7 +6,7 @@ public class TargetObject : MonoBehaviour
 {
     public int id = 0;
     private UIController ui;
-    public  TargetIndicator self;
+    public TargetIndicator self;
     private void Start()
     {
         ui = GetComponentInParent<UIController>();
@@ -20,10 +20,13 @@ public class TargetObject : MonoBehaviour
         ui.AddTargetIndicator(this.gameObject);
 
     }
+    private void OnEnable() {
+        
+    }
     private void OnDisable()
     {
         Debug.Log("Target " + gameObject.name + " Removed");
-        ui.RemoveTargetIndicator(this.id);
+        ui.RemoveTargetIndicator(id);
         self.DeleteSelf();
     }
 }

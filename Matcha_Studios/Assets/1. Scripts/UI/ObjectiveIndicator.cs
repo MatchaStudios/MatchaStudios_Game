@@ -24,7 +24,7 @@ public class ObjectiveIndicator : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
     }
-    private void Start()
+    private void OnEnable()
     {
         Debug.Log("Objective " + id + " Initalized");
         playerPos= GameObject.Find("Ship").GetComponent<Transform>();
