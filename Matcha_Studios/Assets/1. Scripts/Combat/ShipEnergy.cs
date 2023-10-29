@@ -16,7 +16,7 @@ public class ShipEnergy : MonoBehaviour
         get { return energy; }
         set { }
     }
-    private float maxEnergy = 2f;
+    private float maxEnergy = 1f;
     public float MaxEnergy
     {
         get { return maxEnergy; }
@@ -36,7 +36,7 @@ public class ShipEnergy : MonoBehaviour
             energy +=  energyRegenSpeed * Time.deltaTime;
             energy = Mathf.Clamp(energy,0,maxEnergy);
         }
-//        Debug.Log("Energy at " + energy.ToString());
+        // Debug.Log("Energy at " + energy.ToString());
         // energy -= 0.25f * Time.deltaTime;
     }
 

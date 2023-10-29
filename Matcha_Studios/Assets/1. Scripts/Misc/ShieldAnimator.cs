@@ -26,6 +26,7 @@ public class ShieldAnimator : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if(!other.GetComponent<KingOfTheHill>()){
         shieldDamaged?.Invoke();
         SoundManager.Instance.PlaySFX("Shield Get Hit");
         if(currentColor == length){
@@ -41,5 +42,6 @@ public class ShieldAnimator : MonoBehaviour
         {
             if (shieldMesh != null) shieldMesh.SetActive(false);
         });
+        }
     }
 }

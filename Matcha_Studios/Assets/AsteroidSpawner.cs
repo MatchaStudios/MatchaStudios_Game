@@ -11,9 +11,11 @@ public class AsteroidSpawner : MonoBehaviour
     public float minRandomSpawn = -500;
     public float maxRandomSpawn = 500;
 
+    int x,y,z;
+
     private void Start()
     {
-        SpawnAsteroid();
+
     }
 
     void SpawnAsteroid()
@@ -36,4 +38,6 @@ public class AsteroidSpawner : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(maxRandomSpawn * 2, maxRandomSpawn * 2, maxRandomSpawn * 2));
     }
+
+
 }

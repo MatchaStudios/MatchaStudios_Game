@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    public Image energyBar;
     float regenTimer;
     float shieldEnergy = 1f;
+    float health = 1f;
     [SerializeField]
     private Image shieldBar;
     [SerializeField]
+    private Image healthBar;
+    [SerializeField]
     private Image shieldVignette;
     [SerializeField]
-    private GameObject player;
+    public GameObject player;
+
+    private ShipEnergy shipEnergy;
     [SerializeField]
-    private Text shieldText;
+    //private Text shieldText;
 
     private void OnEnable()
     {
@@ -45,15 +51,15 @@ public class HUDController : MonoBehaviour
         if (shieldBar.fillAmount > 0)
         {
             shieldBar.fillAmount -= .10f;
-            int _foo = int.Parse(shieldText.text.TrimEnd('%'));
-            _foo -= 10;
-            shieldText.text = _foo.ToString() + "%";
+            //int _foo = int.Parse(shieldText.text.TrimEnd('%'));
+            //_foo -= 10;
+            //shieldText.text = _foo.ToString() + "%";
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        shipEnergy = player.GetComponent<ShipEnergy>();
     }
 
     // Update is called once per frame
@@ -64,13 +70,13 @@ public class HUDController : MonoBehaviour
         {
             shieldBar.fillAmount += .2f * Time.deltaTime;
             shieldBar.fillAmount = Mathf.Clamp(shieldBar.fillAmount, 0, 1f);
-            int _foo = int.Parse(shieldText.text.TrimEnd('%'));
+            //int _foo = int.Parse(shieldText.text.TrimEnd('%'));
             //_foo += 10;
-            _foo= (int)Mathf.Lerp (_foo, 100, 0.1f);
-            _foo = Mathf.Clamp(_foo, 0, 100);
-            shieldText.text = _foo.ToString() + "%";
+            //_foo= (int)Mathf.Lerp (_foo, 100, 0.1f);
+            //_foo = Mathf.Clamp(_foo, 0, 100);
+            //shieldText.text = _foo.ToString() + "%";
         }
-        //Debug.Log("Energy at " + energy.ToString());
+        energyBar.fillAmount = shipEnergy.energy;
     }
     public void ResetEnergyTimer()
     {
