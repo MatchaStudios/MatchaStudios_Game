@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraFix : MonoBehaviour
 {
-    public GameObject cameraSibal;
+    GameObject camera_;
     void Start()
     {
-        cameraSibal = GameObject.FindGameObjectWithTag("MainCamera");
-        cameraSibal.SetActive(false);
-        cameraSibal.SetActive(true);
+        camera_ = GameObject.FindGameObjectWithTag("MainCamera");
+        camera_.SetActive(false);
+        camera_.SetActive(true);
     }
 }
