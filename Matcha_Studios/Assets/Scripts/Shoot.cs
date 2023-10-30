@@ -134,7 +134,7 @@ public class Shoot : MonoBehaviour
         // "spawns" bullet by setting to active.
 
         GameObject spawnedObject = objectPooling.GetObjectFromPool(bulletType.name);
-        Debug.Log("Bullet Name: " + bulletType.name);
+//        Debug.Log("Bullet Name: " + bulletType.name);
 
         if (spawnedObject != null)
         {

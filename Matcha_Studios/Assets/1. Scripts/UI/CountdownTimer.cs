@@ -5,42 +5,48 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-
+    public TypewriterEffect effect;
     [SerializeField] Text timerText;
     [SerializeField] float remainingTime;
-    public bool canTick=true;
+    public bool canTick = true;
+    public bool expired = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canTick){
-        if(remainingTime > 0)
+        if (canTick)
         {
-            remainingTime -= Time.deltaTime;
+            if (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
 
-            if (remainingTime < 20f)
-            {
-                timerText.color = Color.yellow;
+                if (remainingTime < 20f)
+                {
+                    timerText.color = Color.yellow;
+                }
+                if (remainingTime < 10f)
+                {
+                    timerText.color = Color.red;
+                }
             }
-            if (remainingTime < 10f)
+            else if (remainingTime < 0)
             {
+                remainingTime = 0;
+                if (!expired)
+                {
+                    expired = true;
+                    effect.EndType();
+                }
                 timerText.color = Color.red;
             }
         }
-        else if (remainingTime < 0)
-        {
-            remainingTime = 0;
 
-            timerText.color = Color.red;
-        }
-        }
-        
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);

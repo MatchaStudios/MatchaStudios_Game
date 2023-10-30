@@ -50,7 +50,7 @@ public class ObjectPooling : MonoBehaviour
         {
             // If active, and matches object type by name
             // We forced object name to match prefab in instantiation
-            Debug.Log("Finding Object");
+//            Debug.Log("Finding Object");
             if (obj.activeInHierarchy == false && obj.name == type)
             {
                 //obj.transform.position = position;

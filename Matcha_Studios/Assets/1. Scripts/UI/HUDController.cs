@@ -19,6 +19,8 @@ public class HUDController : MonoBehaviour
     public GameObject player;
 
     private ShipEnergy shipEnergy;
+
+    public KingOfTheHill kothObj;
     [SerializeField]
     //private Text shieldText;
 
@@ -26,11 +28,13 @@ public class HUDController : MonoBehaviour
     {
         ShieldAnimator.shieldDamaged += FlashVignette;
         ShieldAnimator.shieldDamaged += UpdateShieldBar;
+        kothObj.playerEntered+= ShowKothEntry;
     }
     private void OnDisable()
     {
         ShieldAnimator.shieldDamaged -= FlashVignette;
         ShieldAnimator.shieldDamaged -= UpdateShieldBar;
+        kothObj.playerEntered-= ShowKothEntry;
     }
 
     private void FlashVignette()
@@ -44,7 +48,9 @@ public class HUDController : MonoBehaviour
             });
         }
     }
-
+    public void ShowKothEntry () {
+        
+    }
     private void UpdateShieldBar()
     {
         ResetEnergyTimer();

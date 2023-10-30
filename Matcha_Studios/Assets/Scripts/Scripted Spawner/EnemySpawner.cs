@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject AIEnemyCarrier;
 
     // Drag your desired input action to this field in the inspector.
-    public InputActionReference spawnKeyJ; 
+    public InputActionReference spawnKeyJ;
     public InputActionReference spawnKeyK;
     public InputActionReference spawnKeyL;
 
@@ -64,5 +64,25 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector3 spawnPosition = player.transform.position + (transform.forward * spawnDistanceCarrier);
         Instantiate(AIEnemyCarrier, spawnPosition, Quaternion.identity);
+    }
+
+    public void SpawnWave()
+    {
+        Vector3 carrierSpawnPosition = player.transform.position + (transform.forward * spawnDistanceCarrier);
+        for (int i = 0; i < 1; i++)
+        {
+            Instantiate(AIEnemyCarrier, carrierSpawnPosition, Quaternion.identity);
+        }
+        Vector3 orbitalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceOrbital);
+        for (int i = 0; i < 2; i++)
+        {
+            Instantiate(AIEnemyOrbital, orbitalSpawnPosition, Quaternion.identity);
+        }
+        Vector3 normalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceNormal);
+        for (int i = 0; i < 3; i++)
+        {
+            Instantiate(AIEnemyNormal, normalSpawnPosition, Quaternion.identity);
+        }
+
     }
 }
