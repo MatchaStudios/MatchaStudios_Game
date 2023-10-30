@@ -54,8 +54,11 @@ public class Spaceship : MonoBehaviour
     private float roll1D;
     private Vector2 pitchYaw;
 
+    public static GameObject playerInstance;
+
     void Start()
     {
+        playerInstance = gameObject;
         rb = GetComponent<Rigidbody>();
         currentBoostAmount = maxBoostAmount;
     }

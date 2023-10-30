@@ -486,6 +486,52 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "SideMissions",
+            "id": "4b065e97-ade6-494a-9cdf-17816d7e74e4",
+            "actions": [
+                {
+                    "name": "Yes",
+                    "type": "Button",
+                    "id": "e8ce6a0d-7433-4a62-979b-62c0377759c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "No",
+                    "type": "Button",
+                    "id": "9a12c184-be5b-486e-97b0-bd108804479c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "21f811c8-c3f2-44d8-9a4a-ee1c6bb153f3",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Yes",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d061e33a-728a-4394-814e-f7567198b370",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "No",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
