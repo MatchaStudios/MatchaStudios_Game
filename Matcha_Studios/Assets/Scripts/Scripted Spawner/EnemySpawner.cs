@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : Timer
 {
     [Header("=== Keys to Spawn Enemies ===")]
     public GameObject AIEnemyNormal;
@@ -24,6 +25,18 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+    
+    void Update()
+    {
+        if (time > 0)
+        {
+            //enemy position spawns further from expected spawn point
+
+            //enemy object, while mesh is disabled zooms forward to show trail.
+
+            //after zooming forward, mesh enables.
+        }
     }
 
     void OnEnable()

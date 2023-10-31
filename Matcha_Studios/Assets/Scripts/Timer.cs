@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Count Down
 public class Timer : MonoBehaviour
 {
     [Header("=== Timer ===")]
