@@ -7,10 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 524802471790062516, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: aaf038e561c607945b657dd236103ae6, type: 2}
     - target: {fileID: 4667032613018319558, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -54,6 +50,22 @@ PrefabInstance:
     - target: {fileID: 4667032613018319558, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+      propertyPath: SizeModule.separateAxes
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+      propertyPath: SizeModule.y.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+      propertyPath: SizeModule.z.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
+      propertyPath: SizeModule.curve.minMaxState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5080360137837933563, guid: 3beee8b656403a74b8e8ad3941f9f115, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
