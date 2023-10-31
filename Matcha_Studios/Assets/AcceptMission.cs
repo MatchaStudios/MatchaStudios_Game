@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class AcceptMission : MonoBehaviour
 {
+    public Action acceptedMission;
     public InputActionReference acceptKey;
     public InputActionReference rejectKey;
     public SideMission GM;
@@ -45,6 +47,7 @@ public class AcceptMission : MonoBehaviour
         GM.SubMissionArray[0].SetActive(true);
         GM.SubMissionArray[0].transform.position = PlayerTransform.position + distanceToSpawnFromPlayer * playerBackDirection;
         gameObject.SetActive(false);
+        acceptedMission?.Invoke();
     }
     void RejectM()
     {

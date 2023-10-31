@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] float remainingTime;
     public bool canTick = true;
     public bool expired = false;
+    public Action countEnded;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,9 @@ public class CountdownTimer : MonoBehaviour
                 {
                     expired = true;
                     effect.EndType();
+                    countEnded?.Invoke();
+                    timerText.gameObject.SetActive(false);
+                    canTick = false;
                 }
                 timerText.color = Color.red;
             }
