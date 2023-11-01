@@ -15,13 +15,16 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2d38e6fa8bad14f4cb6b1060f8c3bd39
   - enabled: 1
-    path: Assets/Scenes/Milestone_01_Demo.unity
-    guid: 74953bdb9f9ce4c7ab6cc362582623b2
+    path: Assets/Scenes/Milestone_2_Demo.unity
+    guid: 22710000f4723d64cb02e9c6f77acb61
   - enabled: 0
-    path: Assets/Scenes/Nicholas_Demo.unity
-    guid: 08eab956d9a9ae5478f79a7d1655a8bf
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/UpgradeMenu.unity
     guid: 079ab746af7f7434cadf7c934a647b14
+  - enabled: 0
+    path: Assets/Scenes/Milestone_01_Demo.unity
+    guid: 74953bdb9f9ce4c7ab6cc362582623b2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 4e14a4a95ea194b4eb2aab28da2c6817, type: 2}
