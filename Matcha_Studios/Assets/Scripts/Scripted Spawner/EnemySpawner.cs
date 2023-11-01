@@ -22,13 +22,29 @@ public class EnemySpawner : Timer
     public float spawnDistanceOrbital = 30f; // Adjust the distance from the player
     public float spawnDistanceCarrier = 40f; // Adjust the distance from the player
 
+    [Header("=== Offset spawn positions ===")]
+
+    public List<GameObject> TotalEnemies = new List<GameObject>();
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
+        foreach (GameObject enemy in enemies)
+        {
+            TotalEnemies.Add(enemy);
+        }
     }
     
     void Update()
     {
+
+        if (TotalEnemies.Count > 0)
+        {
+            return;
+        }
+
+
         UpdateTimer();
         if (time <= 0)
         {
@@ -43,13 +59,14 @@ public class EnemySpawner : Timer
             //M2
             //Enemy spawns near player
             ResetTimer();
+
             SpawnObject1();
             SpawnObject1();
             //SpawnObject1();
             SpawnObject2();
-            SpawnObject2();
             //SpawnObject2();
-            SpawnObject3();
+            //SpawnObject2();
+            //SpawnObject3();
         }
     }
 

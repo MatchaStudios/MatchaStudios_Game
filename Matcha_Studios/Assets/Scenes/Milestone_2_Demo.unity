@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.005706853, g: 0.0504621, b: 0.081910215, a: 1}
+  m_IndirectSpecularColor: {r: 0.0056604696, g: 0.05049204, b: 0.08187662, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -272,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -686,6 +690,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -1354,6 +1362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1833,6 +1845,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -2497,6 +2513,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2757,6 +2777,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -3076,6 +3100,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -4149,6 +4177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4937,6 +4969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -5501,6 +5537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -5585,6 +5625,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -6146,7 +6190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661859974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 155.6, z: -1178.7}
+  m_LocalPosition: {x: -1215, y: 510, z: -986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 476716679}
@@ -6195,6 +6239,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -6975,6 +7023,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -8751,6 +8803,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -8942,7 +8998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994808072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 472.1, y: 300.63, z: 380.9}
+  m_LocalPosition: {x: 443, y: 83, z: 56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 216052167}
@@ -9186,6 +9242,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -9305,6 +9365,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -11053,6 +11117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11640,6 +11708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -12139,6 +12211,10 @@ PrefabInstance:
     - target: {fileID: 2008432978018893279, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
+      propertyPath: timerSet
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
       propertyPath: spawnDistanceNormal
@@ -12754,6 +12830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -12984,6 +13064,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -13078,6 +13162,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -13202,6 +13290,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -13520,6 +13612,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -14373,6 +14469,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -18288,6 +18388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -19050,6 +19154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -19288,6 +19396,10 @@ PrefabInstance:
     - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_Name
       value: AsteriodSpawner (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
@@ -20238,6 +20350,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -21143,6 +21259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteriodSpawner (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 2270418579669945761, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -21580,6 +21700,14 @@ PrefabInstance:
     - target: {fileID: 3690485007507777400, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
       propertyPath: boostMultiplier
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777400, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: verticalSensitivity
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690485007507777400, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
+      propertyPath: horizontalSensitivity
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3690485007507777402, guid: 310a9a117bebeca40910ebb96e29001c, type: 3}
       propertyPath: laserDamage
@@ -22399,7 +22527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933738259416547437, guid: b7a00562e6516524a80d4128d79a4434, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1444
+      value: 1295
       objectReference: {fileID: 0}
     - target: {fileID: 1933738259416547437, guid: b7a00562e6516524a80d4128d79a4434, type: 3}
       propertyPath: m_LocalRotation.w

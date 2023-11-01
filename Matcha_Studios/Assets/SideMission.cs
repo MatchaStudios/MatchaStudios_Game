@@ -19,7 +19,7 @@ public class SideMission : MonoBehaviour
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         MainMissionStation = GameObject.Find("Main Mission 1").transform;
         distance = Vector3.Distance(MainMissionStation.transform.position, PlayerTransform.position);
-        halfwayThere = distance / 2;
+        halfwayThere = distance / 8;
     }
     private void Update()
     {

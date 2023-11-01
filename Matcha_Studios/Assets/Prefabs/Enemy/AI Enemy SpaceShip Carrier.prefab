@@ -167,6 +167,7 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   lowerPlayerSpeed: 1
   upperPlayerSpeed: 100
+  targetRotation: {x: 0, y: 0, z: 0, w: 1}
   timeAhead: 0
   playerSpeed: 0
 --- !u!114 &-8478054822804180356
@@ -186,7 +187,7 @@ MonoBehaviour:
   isAlive: 1
   initHealth: 0
   curHealth: 0
-  maxHealth: 500
+  maxHealth: 100
   deathParticle: {fileID: 794765740704506693, guid: 177df6beda790df48b483b9b9d444994, type: 3}
   hitParticle: {fileID: 0}
   GameManager: {fileID: 0}

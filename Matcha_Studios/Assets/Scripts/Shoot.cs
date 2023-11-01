@@ -36,6 +36,8 @@ public class Shoot : MonoBehaviour
     public float lowerPlayerSpeed = 1;
     public float upperPlayerSpeed = 10;
 
+    public Quaternion targetRotation = Quaternion.identity;
+
     // Leading speed
     // public float lookAtSpeed = 0.1f;
 
@@ -86,8 +88,8 @@ public class Shoot : MonoBehaviour
         Vector3 predictedDirection = playerPredictedPosition - transform.position;
 
         // Rotate towards the predicted position
-        Quaternion targetRotation = Quaternion.LookRotation(predictedDirection, player.transform.up);
-        transform.rotation =  targetRotation;
+        targetRotation = Quaternion.LookRotation(predictedDirection, player.transform.up);
+        // transform.rotation = targetRotation;
     }
 
     void Targetting()

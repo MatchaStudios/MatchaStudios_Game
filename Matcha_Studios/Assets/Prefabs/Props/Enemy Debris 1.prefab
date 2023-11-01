@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4816,8 +4816,8 @@ GameObject:
   - component: {fileID: 4875368448059772356}
   - component: {fileID: 4875368448059772357}
   - component: {fileID: 6531995674181617370}
-  - component: {fileID: 3472431790213686266}
   - component: {fileID: 4857186659922310731}
+  - component: {fileID: 7214226543702589387}
   m_Layer: 0
   m_Name: Enemy Debris 1
   m_TagString: Untagged
@@ -4867,7 +4867,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0ec00d376038f79499a92cdab8e04fd4, type: 2}
+  - {fileID: 2100000, guid: 03fbcdadd5b6ff54e98e7df796bacabd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4905,20 +4905,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!64 &3472431790213686266
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4875368448059772358}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2432090755550338912, guid: b172c49af1881ac4e9cb9d5b895c1852, type: 3}
 --- !u!114 &4857186659922310731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4932,3 +4918,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   subMission: {fileID: 0}
+  clip: {fileID: 0}
+--- !u!135 &7214226543702589387
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4875368448059772358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
