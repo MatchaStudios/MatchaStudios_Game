@@ -80,6 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f69b76dd9119de42b5f7a0dfcd3397c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
+  timerSet: 40
   AIEnemyNormal: {fileID: 6850854620000661907, guid: ba2d6e1fbe0588b46810464d660c4b6c, type: 3}
   AIEnemyOrbital: {fileID: 7304042638919330411, guid: d58c0cd3278d1464c8a5f05fc333f47b, type: 3}
   AIEnemyCarrier: {fileID: 7405580569073102449, guid: d1e667b3a2f5eda4dbffb55a65bf77ae, type: 3}
