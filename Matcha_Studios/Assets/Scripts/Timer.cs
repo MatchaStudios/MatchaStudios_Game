@@ -5,7 +5,7 @@ using UnityEngine;
 //Count Down
 public class Timer : MonoBehaviour
 {
-    [Header("=== Timer ===")]
+    [Header("=== Enemy Timer ===")]
     public float time = 0f;
     public float timerSet = 10f;
     private bool timeStop = false;
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         time = timerSet;
         timeStop = false;
