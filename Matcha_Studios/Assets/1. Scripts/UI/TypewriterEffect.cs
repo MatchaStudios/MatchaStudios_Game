@@ -54,6 +54,7 @@ public class TypewriterEffect : MonoBehaviour
         }
         yield return new WaitForSeconds(.5f);
         textComponent.text = "";
+        currentText = "";
         textIndex=0;
     }
 

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SubMissionOne : MonoBehaviour
 {
+    public Action completedSubMissionOne;
     [SerializeField]
     public AudioSource audioSource;
 
@@ -75,6 +77,7 @@ public class SubMissionOne : MonoBehaviour
         }
         if (DebrisCount >= 5)
         {
+            completedSubMissionOne?.Invoke();
             ScriptedEnemySpawner1.SetActive(false);
             ScriptedEnemySpawner2.SetActive(false);
 
