@@ -54,7 +54,9 @@ public class HealthComponent : MonoBehaviour
         // Death
         if (curHealth <= 0)
         {
+            //reset health
             curHealth = 0;
+
             isAlive = false;
             Debug.Log(gameObject.name);
             GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
@@ -126,19 +128,6 @@ public class HealthComponent : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         curHealth -= damage;
-        
-        // Death
-        //if (curHealth <= 0)
-        //{
-        //    GameObject spawnedObject = objectPooling.GetObjectFromPool(deathParticle.name);
-        //    if (spawnedObject != null)
-        //    {
-        //        spawnedObject.transform.position = transform.position;
-        //        spawnedObject.transform.rotation = Quaternion.identity;
-        //    }
-
-        //    gameObject.SetActive(false);
-        //}
     }
 
     public void Heal(float heal)

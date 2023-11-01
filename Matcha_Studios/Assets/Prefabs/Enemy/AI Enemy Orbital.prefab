@@ -166,7 +166,7 @@ MonoBehaviour:
   avoidSpeedPercentage: 0.5
   avoidSpeed: 10
   stoppingDistance: 20
-  lookAtSpeed: 10
+  lookAtSpeed: 50
   lookAtAngle: 0
   player: {fileID: 0}
   rayCount: 10
@@ -280,4 +280,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 571167fa547678e46a27f0fff9aef682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OrientationSpeed: 2
+  OrientationSpeed: 5

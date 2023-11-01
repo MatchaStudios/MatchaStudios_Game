@@ -53,8 +53,6 @@ public class ObjectPooling : MonoBehaviour
 //            Debug.Log("Finding Object");
             if (obj.activeInHierarchy == false && obj.name == type)
             {
-                //obj.transform.position = position;
-                //obj.transform.rotation = rotation;
                 obj.SetActive(true);
                 return obj;
             }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
 
+//Only for GameManager GameObject
 public class EnemySpawner : Timer
 {
     [Header("=== Keys to Spawn Enemies ===")]
@@ -22,51 +23,57 @@ public class EnemySpawner : Timer
     public float spawnDistanceOrbital = 30f; // Adjust the distance from the player
     public float spawnDistanceCarrier = 40f; // Adjust the distance from the player
 
-    [Header("=== Offset spawn positions ===")]
-
+    [Header("=== List Of All Enemies ===")]
     public List<GameObject> TotalEnemies = new List<GameObject>();
+
+    [Header("=== Object Pooling ===")]
+    ObjectPooling objectPooling;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
-        foreach (GameObject enemy in enemies)
-        {
-            TotalEnemies.Add(enemy);
-        }
+        objectPooling = gameObject.GetComponent<ObjectPooling>();
     }
     
     void Update()
     {
+        /*
+        * Does not account for any other scripted events.
+        */
 
-        if (TotalEnemies.Count > 0)
+        if (TotalEnemies.Count <= 0)
         {
-            return;
+            UpdateTimer();
         }
-
-
-        UpdateTimer();
         if (time <= 0)
         {
+            ResetTimer();
             //M3 stuff...
-            //enemy position spawns further from expected spawn point
-
+            //enemy position spawns further from expected spawn point.
             //enemy object, while mesh is disabled zooms forward to show trail.
-
             //after zooming forward, mesh enables.
-
 
             //M2
             //Enemy spawns near player
-            ResetTimer();
 
             SpawnObject1();
             SpawnObject1();
-            //SpawnObject1();
             SpawnObject2();
-            //SpawnObject2();
-            //SpawnObject2();
-            //SpawnObject3();
+            SpawnObject3();
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
+            foreach (GameObject enemy in enemies)
+            {
+                TotalEnemies.Add(enemy);
+            }
+        }
+
+        foreach (GameObject enemy in TotalEnemies)
+        {
+            if(enemy.activeInHierarchy == false)
+            {
+                TotalEnemies.Remove(enemy);
+            }
         }
     }
 
@@ -98,34 +105,43 @@ public class EnemySpawner : Timer
     {
         Vector3 spawnPosition = player.transform.position + (transform.forward * spawnDistanceNormal);
         Instantiate(AIEnemyNormal, spawnPosition, Quaternion.identity);
+        //GameObject spawnedObject = objectPooling.GetObjectFromPool(AIEnemyNormal.name);
+        //spawnedObject.transform.position = spawnPosition;
     }
     void SpawnObject2()
     {
         Vector3 spawnPosition = player.transform.position + (transform.forward * spawnDistanceOrbital);
         Instantiate(AIEnemyOrbital, spawnPosition, Quaternion.identity);
+        //GameObject spawnedObject = objectPooling.GetObjectFromPool(AIEnemyOrbital.name);
+        //spawnedObject.transform.position = spawnPosition;
     }
     void SpawnObject3()
     {
         Vector3 spawnPosition = player.transform.position + (transform.forward * spawnDistanceCarrier);
         Instantiate(AIEnemyCarrier, spawnPosition, Quaternion.identity);
+        //GameObject spawnedObject = objectPooling.GetObjectFromPool(AIEnemyCarrier.name);
+        //spawnedObject.transform.position = spawnPosition;
     }
 
     public void SpawnWave()
     {
-        Vector3 carrierSpawnPosition = player.transform.position + (transform.forward * spawnDistanceCarrier);
+        //Vector3 carrierSpawnPosition = player.transform.position + (transform.forward * spawnDistanceCarrier);
         for (int i = 0; i < 1; i++)
         {
-            Instantiate(AIEnemyCarrier, carrierSpawnPosition, Quaternion.identity);
+            SpawnObject3();
+            //Instantiate(AIEnemyCarrier, carrierSpawnPosition, Quaternion.identity);
         }
-        Vector3 orbitalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceOrbital);
+        //Vector3 orbitalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceOrbital);
         for (int i = 0; i < 2; i++)
         {
-            Instantiate(AIEnemyOrbital, orbitalSpawnPosition, Quaternion.identity);
+            SpawnObject2();
+            //Instantiate(AIEnemyOrbital, orbitalSpawnPosition, Quaternion.identity);
         }
-        Vector3 normalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceNormal);
+        //Vector3 normalSpawnPosition = player.transform.position + (transform.forward * spawnDistanceNormal);
         for (int i = 0; i < 3; i++)
         {
-            Instantiate(AIEnemyNormal, normalSpawnPosition, Quaternion.identity);
+            SpawnObject1();
+            //Instantiate(AIEnemyNormal, normalSpawnPosition, Quaternion.identity);
         }
 
     }

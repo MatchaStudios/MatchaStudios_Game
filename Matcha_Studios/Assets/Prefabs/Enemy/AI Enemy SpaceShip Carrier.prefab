@@ -134,7 +134,7 @@ MonoBehaviour:
   avoidSpeedPercentage: 0.3
   avoidSpeed: 10
   stoppingDistance: 25
-  lookAtSpeed: 0.1
+  lookAtSpeed: 0.7
   lookAtAngle: 0
   player: {fileID: 0}
   rayCount: 10
@@ -160,7 +160,7 @@ MonoBehaviour:
   bulletSpeed: 10
   inheritVelocity: 0
   weaponDamage: 0
-  minShootRange: 30
+  minShootRange: 1
   maxShootRange: 200
   distanceFromTarget: 0
   spawnPosition: {fileID: 128216811964282790}
