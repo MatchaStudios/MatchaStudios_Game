@@ -63,10 +63,11 @@ public class ObjectiveManager : MonoBehaviour
 
     IEnumerator FadeInComeplete()
     {
+        if(subMissionComplete){
         subMissionComplete.SetActive(true);
         yield return new WaitForSeconds(2f);
-        if(subMissionComplete)
         Destroy(subMissionComplete);
+        }
     }
 
     // Update is called once per frame
