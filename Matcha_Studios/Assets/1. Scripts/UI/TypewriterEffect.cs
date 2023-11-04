@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class TypewriterEffect : MonoBehaviour
 {
     public Action endedObjective;
+    public Action acceptSubMission;
+    public Action rejectSubMission;
     public KingOfTheHill kothObj;
     public float typingSpeed = 0.1f; // Adjust the speed of typing
     public Text textComponent; // Reference to the UI Text component
@@ -21,7 +23,6 @@ public class TypewriterEffect : MonoBehaviour
         // Store the full text from the Text component
         fullText = textComponent.text;
         textComponent.text = ""; // Clear the initial text
-
     }
 
     public void StartTyping()
@@ -35,6 +36,10 @@ public class TypewriterEffect : MonoBehaviour
         fullText = addText;
         currentText = "";
         StartCoroutine(TypeText());
+
+        acceptSubMission?.Invoke();
+        rejectSubMission?.Invoke();
+
     }
     IEnumerator TypeText()
     {

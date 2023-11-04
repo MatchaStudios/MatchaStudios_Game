@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class AcceptMission : MonoBehaviour
 {
     public Action acceptedMission;
+    public Action rejectMission;
     public InputActionReference acceptKey;
     public InputActionReference rejectKey;
     public SideMission GM;
@@ -52,6 +53,7 @@ public class AcceptMission : MonoBehaviour
     void RejectM()
     {
         gameObject.SetActive(false);
+        rejectMission?.Invoke();
     }
 
 }

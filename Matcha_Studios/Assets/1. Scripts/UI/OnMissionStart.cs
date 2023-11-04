@@ -9,6 +9,7 @@ public class OnMissionStart : MonoBehaviour
     public Image imageHowToPlay;
     public float fadeDuration = 0.5f; // Duration of the fade in seconds
     public GameObject startBlurb;
+    public Text startObjective;
 
     void Start()
     {
@@ -61,12 +62,20 @@ public class OnMissionStart : MonoBehaviour
         startBlurb.SetActive(true);
         yield return null;
     }
+
+    IEnumerator FirstObjective()
+    {
+        startObjective.gameObject.SetActive(true);
+        yield return null;
+    }
+
     IEnumerator SequenceStart()
     {
         yield return StartCoroutine(FadeImageAlpha(image));
         yield return StartCoroutine(FadeInSecondImage(imageHowToPlay));
         yield return StartCoroutine(FadeImageAlpha(imageHowToPlay));
         yield return StartCoroutine(StartTextBlurb());
+        yield return StartCoroutine(FirstObjective());
 
     }
 }
