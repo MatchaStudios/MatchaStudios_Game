@@ -5,11 +5,14 @@ using System;
 
 public class SubMissionOne : MonoBehaviour
 {
+    //Scuffed audio adaptive fields
+    public MusicManager musicManager;
+    private bool firedMusic = false;
     public Action completedSubMissionOne;
     [SerializeField]
     public AudioSource audioSource;
 
-    public AudioClip 
+    public AudioClip
         StationStuck, //when accepted mission
         DamnPirates, //Debris count 1
         AwwHellIThoughtTheyDied, //Debris count 2
@@ -69,6 +72,9 @@ public class SubMissionOne : MonoBehaviour
         {
             //enemy spawn
             ScriptedEnemySpawner1.SetActive(true);
+
+
+
         }
         if (DebrisCount == 4)
         {
@@ -80,6 +86,11 @@ public class SubMissionOne : MonoBehaviour
             completedSubMissionOne?.Invoke();
             ScriptedEnemySpawner1.SetActive(false);
             ScriptedEnemySpawner2.SetActive(false);
+            if (!firedMusic)
+            {
+                musicManager.FireLayer5();
+                firedMusic = true;
+            }
 
             //TODO:
             // ADD REWARD TO PLAYER HERE

@@ -1377,6 +1377,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4186151986304268429, guid: 53bbf3bf83a97ba47a63c59c8171a401, type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 3973789821370804821}
     - target: {fileID: 5296361359116055624, guid: 53bbf3bf83a97ba47a63c59c8171a401, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -3420,6 +3424,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
   m_PrefabInstance: {fileID: 1237721202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &339543919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6b15e8a7a8404fab1b489203eee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: SONG 0
+  layer:
+  - {fileID: 8300000, guid: f359e6bd40009481894f1009818697ec, type: 3}
+  layerNames:
+  - Layer 0
+  volumes:
+  - 1
+  loopCrossfadeBy: 0
+  layerCrossfadeBy: 1.5
+  loop: 1
+  layerResourceNames:
+  - 
 --- !u!1 &355163373
 GameObject:
   m_ObjectHideFlags: 0
@@ -3869,6 +3897,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404540272}
   m_CullTransparentMesh: 1
+--- !u!114 &407774046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6b15e8a7a8404fab1b489203eee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: SONG 0
+  layer:
+  - {fileID: 8300000, guid: 49cbae306442246f9aa792e067ae62e7, type: 3}
+  layerNames:
+  - Layer 0
+  volumes:
+  - 1
+  loopCrossfadeBy: 0
+  layerCrossfadeBy: 1.5
+  loop: 1
+  layerResourceNames:
+  - 
 --- !u!1 &410807852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6631,6 +6683,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
   m_PrefabInstance: {fileID: 1886952557}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &658685952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6b15e8a7a8404fab1b489203eee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: SONG 0
+  layer:
+  - {fileID: 8300000, guid: 21fd7c2329a0f428a940b1a4be7d280b, type: 3}
+  layerNames:
+  - Layer 0
+  volumes:
+  - 1
+  loopCrossfadeBy: 0
+  layerCrossfadeBy: 1.5
+  loop: 1
+  layerResourceNames:
+  - 
 --- !u!1 &661859974
 GameObject:
   m_ObjectHideFlags: 0
@@ -6689,6 +6765,7 @@ MonoBehaviour:
   objectiveText3: {fileID: 1890628269}
   objectiveText4: {fileID: 394422930}
   subMissionComplete: {fileID: 1999615704}
+  musicManager: {fileID: 3973789821370804821}
 --- !u!1001 &666039829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8985,6 +9062,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
+--- !u!114 &936388948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6b15e8a7a8404fab1b489203eee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: SONG 0
+  layer:
+  - {fileID: 8300000, guid: 3d24caf778bc045918e73980ccd967f7, type: 3}
+  layerNames:
+  - Layer 0
+  volumes:
+  - 1
+  loopCrossfadeBy: 0
+  layerCrossfadeBy: 1.5
+  loop: 1
+  layerResourceNames:
+  - 
 --- !u!1001 &940220449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9624,6 +9725,8 @@ MonoBehaviour:
   missionStart: {fileID: 1490811272}
   objectiveText1: {fileID: 1660560060}
   objectiveText2: {fileID: 1135388347}
+  musicManager: {fileID: 3973789821370804821}
+  firedMusic: 0
 --- !u!4 &994808075
 Transform:
   m_ObjectHideFlags: 0
@@ -13087,9 +13190,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 703399928}
+    - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
       propertyPath: timerSet
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 3973789821370804821}
     - target: {fileID: 4225332349591398164, guid: 12081ced9eb55c94c96e760a9871f55e, type: 3}
       propertyPath: spawnDistanceNormal
       value: 150
@@ -23975,6 +24086,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2270418579669945763, guid: 44f3f7a7e05869b4dab21f9fdd5dd37e, type: 3}
   m_PrefabInstance: {fileID: 1420936824}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2142816473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c6b15e8a7a8404fab1b489203eee17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textName: SONG 0
+  layer:
+  - {fileID: 8300000, guid: 7585afc7722bc4157aac3557a97ac35d, type: 3}
+  layerNames:
+  - Layer 0
+  volumes:
+  - 1
+  loopCrossfadeBy: 0
+  layerCrossfadeBy: 1.5
+  loop: 1
+  layerResourceNames:
+  - 
 --- !u!1001 &1933738259086647018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24062,6 +24197,31 @@ MonoBehaviour:
   MainCamera: {fileID: 1687258584}
   TargetObjectivePrefab: {fileID: 6369568489782498177, guid: 081f0393541331e4e971d4a8db0dbf3e, type: 3}
   indicatorCount: 0
+--- !u!81 &3973789821370804820
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+--- !u!114 &3973789821370804821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9754df352e5d9ec4585f623350953540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gA: {fileID: 8408379537913279296}
+  gAL1: {fileID: 8408379537913279325}
+  gAL2: {fileID: 8408379537913279324}
+  gAL3: {fileID: 8408379537913279327}
+  gAL4: {fileID: 8408379537913279326}
 --- !u!114 &5883120609165908169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24162,3 +24322,130 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8408379537913279296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0044b2a1fe8c73146950efed70f39ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 407774046}
+  globalVolume: 0.5
+  globalCrossFadeTime: 3
+  players: []
+  resourceRequestMode: 0
+--- !u!1 &8408379537913279297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8408379537913279359}
+  - component: {fileID: 3973789821370804820}
+  - component: {fileID: 3973789821370804821}
+  - component: {fileID: 8408379537913279296}
+  - component: {fileID: 8408379537913279325}
+  - component: {fileID: 8408379537913279324}
+  - component: {fileID: 8408379537913279327}
+  - component: {fileID: 8408379537913279326}
+  m_Layer: 0
+  m_Name: Adaptive Music Player 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &8408379537913279324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0044b2a1fe8c73146950efed70f39ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 2142816473}
+  globalVolume: 0.5
+  globalCrossFadeTime: 3
+  players: []
+  resourceRequestMode: 0
+--- !u!114 &8408379537913279325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0044b2a1fe8c73146950efed70f39ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 936388948}
+  globalVolume: 0.5
+  globalCrossFadeTime: 3
+  players: []
+  resourceRequestMode: 0
+--- !u!114 &8408379537913279326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0044b2a1fe8c73146950efed70f39ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 339543919}
+  globalVolume: 0.5
+  globalCrossFadeTime: 3
+  players: []
+  resourceRequestMode: 0
+--- !u!114 &8408379537913279327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0044b2a1fe8c73146950efed70f39ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songs:
+  - {fileID: 658685952}
+  globalVolume: 0.5
+  globalCrossFadeTime: 3
+  players: []
+  resourceRequestMode: 0
+--- !u!4 &8408379537913279359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408379537913279297}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -18,6 +18,8 @@ public class ObjectiveManager : MonoBehaviour
     public Text objectiveText3;
     public Text objectiveText4;
     public GameObject subMissionComplete;
+    
+    public MusicManager musicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +65,7 @@ public class ObjectiveManager : MonoBehaviour
     {
         subMissionComplete.SetActive(true);
         yield return new WaitForSeconds(2f);
+        if(subMissionComplete)
         Destroy(subMissionComplete);
     }
 
@@ -122,7 +125,7 @@ public class ObjectiveManager : MonoBehaviour
         {
             objectives[0].SetActive(false);
             objectives[1].SetActive(true);
-
+            musicManager.FireLayer4();
         }
         else
         {

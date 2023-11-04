@@ -18,7 +18,8 @@ public class KingOfTheHill : MonoBehaviour
 
     public Text objectiveText1;
     public Text objectiveText2;
-
+    public MusicManager musicManager;
+    public bool firedMusic=false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,10 @@ public class KingOfTheHill : MonoBehaviour
             countdownTimer.SetActive(true);
             timer.canTick = true;
             objectiveText2.gameObject.SetActive(true);
+            if(!firedMusic)
+            {
+                musicManager.FireLayer2();
+            }
         }
     }
     private void OnTriggerExit(Collider other)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
@@ -29,6 +30,11 @@ public class EnemySpawner : Timer
     [Header("=== Object Pooling ===")]
     ObjectPooling objectPooling;
 
+    //very scuffed adaptive audio fields
+    private bool firedFirst = false;
+    public MusicManager musicManager;
+    private int timesFired;
+    // end of adaptive audio fields
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -61,6 +67,13 @@ public class EnemySpawner : Timer
             SpawnObject2();
             SpawnObject3();
 
+            //Scuffed adaptive audio 
+            if(!firedFirst)
+            {
+                firedFirst=true;
+                musicManager.FireLayer3();
+                
+            }
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
             foreach (GameObject enemy in enemies)
             {
@@ -68,7 +81,7 @@ public class EnemySpawner : Timer
             }
         }
 
-        foreach (GameObject enemy in TotalEnemies)
+        foreach (GameObject enemy in TotalEnemies.ToList())
         {
             if(enemy.activeInHierarchy == false)
             {
