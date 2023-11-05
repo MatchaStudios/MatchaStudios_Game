@@ -9,6 +9,7 @@ public class SubMissionOne : MonoBehaviour
     public MusicManager musicManager;
     private bool firedMusic = false;
     public Action completedSubMissionOne;
+    public Action<int, float> triggeredNewAudio;
     [SerializeField]
     public AudioSource audioSource;
 
@@ -32,6 +33,7 @@ public class SubMissionOne : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = StationStuck;
         audioSource.Play();
+        triggeredNewAudio?.Invoke(1, StationStuck.length);
     }
 
     // Update is called once per frame
@@ -67,12 +69,24 @@ public class SubMissionOne : MonoBehaviour
         //        }
         //    }
         //}
+        if (DebrisCount == 1)
+        {
+            triggeredNewAudio?.Invoke(2, DamnPirates.length);
 
+
+        }
         if (DebrisCount == 2)
         {
             //enemy spawn
             ScriptedEnemySpawner1.SetActive(true);
+            triggeredNewAudio?.Invoke(3, AwwHellIThoughtTheyDied.length);
 
+
+        }
+
+        if (DebrisCount == 3)
+        {
+            triggeredNewAudio?.Invoke(4, TheseDamnPirates.length);
 
 
         }
@@ -80,10 +94,12 @@ public class SubMissionOne : MonoBehaviour
         {
             //enemy spawn
             ScriptedEnemySpawner2.SetActive(true);
+            triggeredNewAudio?.Invoke(5, ThosePartsCouldSaveUs.length);
         }
         if (DebrisCount >= 5)
         {
             completedSubMissionOne?.Invoke();
+            triggeredNewAudio?.Invoke(7, HeyThanksALot.length);
             ScriptedEnemySpawner1.SetActive(false);
             ScriptedEnemySpawner2.SetActive(false);
             if (!firedMusic)
